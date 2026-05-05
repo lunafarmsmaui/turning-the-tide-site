@@ -348,7 +348,7 @@ Mental health practitioners, veteran service organization leaders, agricultural 
 **John Collins**
 Founder, Turning the Tides
 Phone: (615) 739-3008
-Email: spc2233@hotmail.com
+Email: turningthetidesmaui@gmail.com
 Web: [website to be hosted]
 
 ---
