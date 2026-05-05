@@ -658,26 +658,26 @@
       <div class="form-row">
         <div>
           <label>First Name</label>
-          <input type="text" placeholder="John" required />
+          <input type="text" name="first_name" placeholder="John" required />
         </div>
         <div>
           <label>Last Name</label>
-          <input type="text" placeholder="Smith" required />
+          <input type="text" name="last_name" placeholder="Smith" required />
         </div>
       </div>
       <div class="form-row">
         <div>
           <label>Phone Number</label>
-          <input type="tel" placeholder="(555) 000-0000" />
+          <input type="tel" name="phone" placeholder="(555) 000-0000" />
         </div>
         <div>
           <label>Email Address</label>
-          <input type="email" placeholder="you@email.com" required />
+          <input type="email" name="email" placeholder="you@email.com" required />
         </div>
       </div>
       <div>
         <label>Branch of Service</label>
-        <select>
+        <select name="branch">
           <option value="">Select branch</option>
           <option>Army</option>
           <option>Navy</option>
@@ -689,7 +689,7 @@
       </div>
       <div>
         <label>Tell us a little about yourself and why you're interested</label>
-        <textarea placeholder="Share as much or as little as you're comfortable with..."></textarea>
+        <textarea name="message" placeholder="Share as much or as little as you're comfortable with..."></textarea>
       </div>
       <p class="form-note">Your information will never be shared. We'll be in touch as soon as applications open.</p>
       <button type="submit" class="btn-primary">Join the Waitlist</button>
@@ -758,21 +758,21 @@
       <div class="form-row">
         <div>
           <label>Full Name</label>
-          <input type="text" placeholder="Your name" required />
+          <input type="text" name="full_name" placeholder="Your name" required />
         </div>
         <div>
           <label>Email</label>
-          <input type="email" placeholder="you@email.com" required />
+          <input type="email" name="email" placeholder="you@email.com" required />
         </div>
       </div>
       <div class="form-row">
         <div>
           <label>Phone (optional)</label>
-          <input type="tel" placeholder="(555) 000-0000" />
+          <input type="tel" name="phone" placeholder="(555) 000-0000" />
         </div>
         <div>
           <label>Are You a Veteran?</label>
-          <select>
+          <select name="veteran_status">
             <option value="">Select</option>
             <option>Yes</option>
             <option>No — civilian supporter</option>
@@ -782,11 +782,11 @@
       </div>
       <div>
         <label>Where are you located?</label>
-        <input type="text" placeholder="City, State (or 'Maui' if local)" />
+        <input type="text" name="location" placeholder="City, State (or 'Maui' if local)" />
       </div>
       <div>
         <label>How would you like to help?</label>
-        <textarea placeholder="Tell us about your skills, availability, or what you'd like to do..."></textarea>
+        <textarea name="message" placeholder="Tell us about your skills, availability, or what you'd like to do..."></textarea>
       </div>
       <button type="submit" class="btn-primary">Submit Volunteer Form</button>
     </form>
@@ -897,15 +897,15 @@
         <form id="contactForm" onsubmit="submitForm(event, 'contactForm', 'contactToast')">
           <div>
             <label>Your Name</label>
-            <input type="text" placeholder="Full name" required />
+            <input type="text" name="full_name" placeholder="Full name" required />
           </div>
           <div>
             <label>Email</label>
-            <input type="email" placeholder="you@email.com" required />
+            <input type="email" name="email" placeholder="you@email.com" required />
           </div>
           <div>
             <label>Message</label>
-            <textarea placeholder="How can we help?" style="min-height:100px;"></textarea>
+            <textarea name="message" placeholder="How can we help?" style="min-height:100px;"></textarea>
           </div>
           <button type="submit" class="btn-primary">Send Message</button>
         </form>
@@ -924,7 +924,7 @@
       Get updates on our progress, retreat dates, fundraising milestones, and stories from the veterans we serve. We won't spam you — just real updates, sent occasionally.
     </p>
     <form id="newsletterForm" onsubmit="submitForm(event, 'newsletterForm', 'newsletterToast')" style="display:flex; gap:12px; max-width:500px; margin:0 auto; flex-wrap:wrap; justify-content:center;">
-      <input type="email" placeholder="Your email address" required style="flex:1; min-width:240px;">
+      <input type="email" name="email" placeholder="Your email address" required style="flex:1; min-width:240px;">
       <button type="submit" class="btn-primary" style="padding:14px 28px;">Subscribe</button>
     </form>
   </div>
@@ -984,10 +984,42 @@
 
   function submitForm(e, formId, toastId) {
     e.preventDefault();
+    const form = document.getElementById(formId);
     const toast = document.getElementById(toastId);
-    toast.style.display = 'block';
-    setTimeout(() => { toast.style.display = 'none'; }, 4000);
-    document.getElementById(formId).reset();
+    const data = new FormData(form);
+
+    const subjects = {
+      applyForm:      'Waitlist Signup — Turning the Tides',
+      volunteerForm:  'Volunteer Signup — Turning the Tides',
+      contactForm:    'Contact Form — Turning the Tides',
+      newsletterForm: 'Newsletter Signup — Turning the Tides'
+    };
+    data.append('_subject', subjects[formId] || 'Turning the Tides — Form Submission');
+    data.append('_template', 'table');
+    data.append('_captcha', 'false');
+
+    // Disable the submit button while sending
+    const btn = form.querySelector('button[type="submit"]');
+    const originalBtnText = btn ? btn.textContent : '';
+    if (btn) { btn.disabled = true; btn.textContent = 'Sending...'; }
+
+    fetch('https://formsubmit.co/ajax/turningthetidesmaui@gmail.com', {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: data
+    })
+    .then(r => r.json())
+    .then(() => {
+      toast.style.display = 'block';
+      setTimeout(() => { toast.style.display = 'none'; }, 4000);
+      form.reset();
+    })
+    .catch(() => {
+      alert("Sorry, something went wrong sending your message. Please email us directly at turningthetidesmaui@gmail.com and we'll get back to you.");
+    })
+    .finally(() => {
+      if (btn) { btn.disabled = false; btn.textContent = originalBtnText; }
+    });
   }
 
   function setAmount(btn, amount) {
