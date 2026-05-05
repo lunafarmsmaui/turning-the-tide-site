@@ -461,14 +461,21 @@
     /* ── RESPONSIVE ───────────────────────────────────────── */
     @media (max-width: 768px) {
       nav { padding: 14px 20px; }
-      .nav-links { gap: 16px; }
+      .nav-links { gap: 16px; flex-wrap: wrap; justify-content: center; }
       .nav-links a { font-size: 11px; }
       section { padding: 60px 20px; }
       .mission-grid, .setting-grid, .contact-grid { grid-template-columns: 1fr; gap: 36px; }
       .program-grid { grid-template-columns: 1fr; }
       .form-row { grid-template-columns: 1fr; }
       footer { flex-direction: column; text-align: center; }
+      .founder-grid { grid-template-columns: 1fr !important; gap: 30px !important; }
+      .founder-grid img { max-width: 280px; margin: 0 auto; display: block; }
+      .hero-title { font-size: 56px !important; }
+      h1, h2, h3 { word-break: break-word; }
     }
+    /* Prevent horizontal overflow on all devices */
+    html, body { overflow-x: hidden; max-width: 100%; }
+    img { max-width: 100%; height: auto; }
   </style>
 </head>
 <body>
@@ -537,7 +544,7 @@
     <div class="section-label">Our Story</div>
     <h2 class="section-title">A Message from the Founder</h2>
     <div class="section-line"></div>
-    <div style="display:grid; grid-template-columns: 340px 1fr; gap:60px; align-items:start;">
+    <div class="founder-grid" style="display:grid; grid-template-columns: 340px 1fr; gap:60px; align-items:start;">
       <div>
         <img src="founderphoto.jpg" alt="John Collins – Founder" style="width:100%; border-radius:2px; border: 3px solid rgba(201,168,76,0.3);">
         <div style="margin-top:16px; padding:16px; background:rgba(201,168,76,0.07); border-left:3px solid var(--gold);">
