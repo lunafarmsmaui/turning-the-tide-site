@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Turning the Tides — Year 1 Budget</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --navy:   #0a1628;
+      --gold:   #c9a84c;
+      --olive:  #4a5e3a;
+      --gray:   #555;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background: #888;
+      color: #222;
+      line-height: 1.6;
+      padding: 40px 20px;
+    }
+    h1, h2, h3, h4 { font-family: 'Oswald', sans-serif; }
+
+    .page {
+      width: 8.5in;
+      min-height: 11in;
+      margin: 20px auto;
+      background: white;
+      padding: 0.7in 0.85in;
+      box-shadow: 0 6px 30px rgba(0,0,0,0.4);
+      page-break-after: always;
+      position: relative;
+    }
+    .page:last-child { page-break-after: auto; }
+
+    /* Cover */
+    .cover {
+      background: linear-gradient(160deg, var(--navy) 0%, #0d2d3a 50%, #0a1e10 100%);
+      color: white;
+      display: flex; flex-direction: column;
+      justify-content: center; align-items: center;
+      text-align: center;
+      padding: 1.4in;
+    }
+    .cover .badge {
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      padding: 6px 16px;
+      letter-spacing: 3px;
+      font-size: 12px;
+      text-transform: uppercase;
+      margin-bottom: 30px;
+    }
+    .cover h1 {
+      font-size: 72px;
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: 2px;
+    }
+    .cover h1 span { color: var(--gold); }
+    .cover h2 {
+      font-size: 26px;
+      font-weight: 400;
+      letter-spacing: 4px;
+      color: white;
+      margin-top: 28px;
+    }
+    .cover .gold-line {
+      width: 80px; height: 4px;
+      background: var(--gold);
+      margin: 28px 0;
+    }
+    .cover .meta {
+      margin-top: auto;
+      font-size: 13px;
+      letter-spacing: 2px;
+      color: #8aa0aa;
+      text-transform: uppercase;
+    }
+
+    .label {
+      display: inline-block;
+      font-family: 'Oswald', sans-serif;
+      font-size: 11px;
+      letter-spacing: 3px;
+      color: var(--gold);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+    }
+
+    h1.section-h1 {
+      font-size: 32px;
+      color: var(--navy);
+      letter-spacing: 1px;
+      border-bottom: 3px solid var(--gold);
+      padding-bottom: 8px;
+      margin-bottom: 18px;
+    }
+
+    h2.section-h2 {
+      font-size: 19px;
+      color: var(--olive);
+      margin-top: 22px;
+      margin-bottom: 8px;
+      letter-spacing: 1px;
+    }
+
+    p { font-size: 13px; line-height: 1.6; margin-bottom: 12px; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 10px 0 18px;
+      font-size: 12.5px;
+    }
+    th {
+      background: var(--navy);
+      color: white;
+      padding: 8px 10px;
+      text-align: left;
+      letter-spacing: 1px;
+      font-family: 'Oswald', sans-serif;
+      font-size: 11px;
+    }
+    th.right { text-align: right; }
+    td { padding: 6px 10px; border-bottom: 1px solid #ddd; }
+    td.right { text-align: right; }
+    td.bold { font-weight: 700; }
+    tr:nth-child(even) td { background: #f9f7f2; }
+
+    .total-row td {
+      background: var(--navy) !important;
+      color: white !important;
+      font-weight: 700;
+      font-size: 13.5px;
+    }
+    .subtotal-row td {
+      background: #faf3dd !important;
+      font-weight: 600;
+      border-top: 2px solid var(--gold);
+    }
+
+    .summary-box {
+      background: #faf7ee;
+      border-left: 4px solid var(--gold);
+      padding: 14px 18px;
+      margin: 14px 0;
+      font-size: 13px;
+    }
+    .summary-box .stat {
+      font-family: 'Oswald', sans-serif;
+      font-size: 24px;
+      color: var(--olive);
+      font-weight: 700;
+    }
+
+    .footer {
+      position: absolute;
+      bottom: 0.3in;
+      left: 0.85in;
+      right: 0.85in;
+      font-size: 10px;
+      color: #888;
+      text-align: center;
+      letter-spacing: 1px;
+      padding-top: 6px;
+      border-top: 1px solid #ddd;
+    }
+
+    @media print {
+      body { background: white; padding: 0; }
+      .page { margin: 0; box-shadow: none; }
+      .print-banner { display: none !important; }
+    }
+
+    .print-banner {
+      position: fixed; top: 12px; right: 12px;
+      background: var(--gold); color: var(--navy);
+      padding: 10px 16px; border-radius: 6px;
+      font-family: 'Oswald', sans-serif;
+      font-size: 13px; letter-spacing: 1px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.3);
+      z-index: 100; cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<div class="print-banner" onclick="window.print()">📄 Save as PDF (Ctrl+P)</div>
+
+<!-- COVER -->
+<div class="page cover">
+  <div class="badge">Year 1 Budget</div>
+  <h1>TURNING<br>THE <span>TIDES</span></h1>
+  <div class="gold-line"></div>
+  <h2>FINANCIAL PLAN</h2>
+  <div class="meta">
+    Founder: John Collins<br>
+    Maui, Hawaii &nbsp;•&nbsp; A 501(c)(3) in Formation<br>
+    May 2026
+  </div>
+</div>
+
+<!-- PAGE 2: SUMMARY -->
+<div class="page">
+  <span class="label">Budget Summary</span>
+  <h1 class="section-h1">Year 1 Overview</h1>
+
+  <div class="summary-box">
+    <div style="font-size:11px; letter-spacing:2px; color:#888;">TOTAL YEAR 1 BUDGET</div>
+    <div class="stat">$92,900</div>
+    <div style="font-size:12px; color:#666;">Funding 3 pilot retreats (3-5 days each) serving 18 combat veterans (lodging donated by partner)</div>
+  </div>
+
+  <table>
+    <thead>
+      <tr><th>Category</th><th class="right">Amount</th><th class="right">% of Budget</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Startup & Legal Costs</td><td class="right">$3,990</td><td class="right">4.3%</td></tr>
+      <tr><td>Insurance & Compliance</td><td class="right">$4,800</td><td class="right">5.2%</td></tr>
+      <tr><td>3 Pilot Retreats (3-5 days)</td><td class="right">$32,400</td><td class="right">34.9%</td></tr>
+      <tr><td>Operations & Personnel</td><td class="right">$33,900</td><td class="right">36.5%</td></tr>
+      <tr><td>Marketing & Development</td><td class="right">$5,700</td><td class="right">6.1%</td></tr>
+      <tr><td>Contingency (15%)</td><td class="right">$12,119</td><td class="right">13.0%</td></tr>
+      <tr class="total-row"><td>TOTAL</td><td class="right">$92,909</td><td class="right">100%</td></tr>
+    </tbody>
+  </table>
+
+  <h2 class="section-h2">How Funds Reach Veterans</h2>
+  <p>More than 60% of every dollar goes directly toward retreat operations and veteran services. The remaining funds support the infrastructure, insurance, and personnel that make those retreats possible safely and at scale.</p>
+
+  <h2 class="section-h2">Cost Per Veteran Served</h2>
+  <table>
+    <thead><tr><th>Year</th><th>Veterans Served</th><th class="right">Cost per Veteran</th></tr></thead>
+    <tbody>
+      <tr><td>Year 1 (Pilot)</td><td>18</td><td class="right">$5,161</td></tr>
+      <tr><td>Year 3 (Scale)</td><td>48</td><td class="right">$5,200</td></tr>
+      <tr><td>Year 5 (Mature)</td><td>72</td><td class="right">$5,500</td></tr>
+    </tbody>
+  </table>
+
+  <p style="font-style:italic; color:var(--gray);">For comparison, the VA spends approximately $11,000 per year on outpatient PTSD care for a single veteran.</p>
+
+  <div class="footer">TURNING THE TIDES &nbsp;•&nbsp; YEAR 1 BUDGET &nbsp;•&nbsp; PAGE 1</div>
+</div>
+
+<!-- PAGE 3: STARTUP & INSURANCE -->
+<div class="page">
+  <span class="label">Detailed Line Items</span>
+  <h1 class="section-h1">Startup & Compliance</h1>
+
+  <h2 class="section-h2">Startup Costs</h2>
+  <table>
+    <thead><tr><th>Line Item</th><th class="right">Qty</th><th class="right">Unit Cost</th><th class="right">Total</th></tr></thead>
+    <tbody>
+      <tr><td>501(c)(3) IRS Filing Fee</td><td class="right">1</td><td class="right">$600</td><td class="right">$600</td></tr>
+      <tr><td>Hawaii Incorporation</td><td class="right">1</td><td class="right">$50</td><td class="right">$50</td></tr>
+      <tr><td>EIN Application</td><td class="right">1</td><td class="right">$0</td><td class="right">$0</td></tr>
+      <tr><td>Legal consultation (nonprofit setup)</td><td class="right">5 hr</td><td class="right">$200</td><td class="right">$1,000</td></tr>
+      <tr><td>Bookkeeping software (QuickBooks)</td><td class="right">12 mo</td><td class="right">$30</td><td class="right">$360</td></tr>
+      <tr><td>CPA review & setup</td><td class="right">1</td><td class="right">$1,500</td><td class="right">$1,500</td></tr>
+      <tr><td>Website hosting & domain</td><td class="right">12 mo</td><td class="right">$15</td><td class="right">$180</td></tr>
+      <tr><td>Logo / branding refinement</td><td class="right">1</td><td class="right">$300</td><td class="right">$300</td></tr>
+      <tr class="subtotal-row"><td colspan="3">SUBTOTAL — STARTUP</td><td class="right">$3,990</td></tr>
+    </tbody>
+  </table>
+
+  <h2 class="section-h2">Insurance & Compliance</h2>
+  <table>
+    <thead><tr><th>Line Item</th><th class="right">Qty</th><th class="right">Unit Cost</th><th class="right">Total</th></tr></thead>
+    <tbody>
+      <tr><td>General Liability Insurance</td><td class="right">12 mo</td><td class="right">$200</td><td class="right">$2,400</td></tr>
+      <tr><td>Directors & Officers (D&O)</td><td class="right">12 mo</td><td class="right">$150</td><td class="right">$1,800</td></tr>
+      <tr><td>Participant Accident Coverage</td><td class="right">12 mo</td><td class="right">$50</td><td class="right">$600</td></tr>
+      <tr class="subtotal-row"><td colspan="3">SUBTOTAL — INSURANCE</td><td class="right">$4,800</td></tr>
+    </tbody>
+  </table>
+
+  <p style="font-style:italic; margin-top:12px;">Insurance is non-negotiable. Without it, no liability protection for John, the board, or the program. Insurance quotes vary by state — Hawaii rates may differ. Get 2-3 quotes before locking in.</p>
+
+  <div class="footer">TURNING THE TIDES &nbsp;•&nbsp; YEAR 1 BUDGET &nbsp;•&nbsp; PAGE 2</div>
+</div>
+
+<!-- PAGE 4: RETREAT COSTS -->
+<div class="page">
+  <span class="label">Detailed Line Items</span>
+  <h1 class="section-h1">Per-Retreat Cost Breakdown</h1>
+
+  <p>Each retreat hosts ~6 veterans for 3-5 days. Costs scale linearly — a 4-vet retreat is cheaper, an 8-vet retreat is more expensive. Shorter retreats lower the barrier to attendance for veterans with jobs, families, or limited PTO.</p>
+
+  <h2 class="section-h2">Single Retreat (6 vets × 4 days)</h2>
+  <table>
+    <thead><tr><th>Line Item</th><th class="right">Qty</th><th class="right">Unit Cost</th><th class="right">Total</th></tr></thead>
+    <tbody>
+      <tr><td>Round-trip flights to Maui</td><td class="right">6</td><td class="right">$700</td><td class="right">$4,200</td></tr>
+      <tr><td>Ground transport on Maui</td><td class="right">1</td><td class="right">$500</td><td class="right">$500</td></tr>
+      <tr><td>Lodging — <em>donated by partner</em></td><td class="right">24 nights</td><td class="right">$0</td><td class="right">$0</td></tr>
+      <tr><td>Groceries & meals</td><td class="right">24 days</td><td class="right">$50</td><td class="right">$1,200</td></tr>
+      <tr><td>Surf instruction</td><td class="right">6</td><td class="right">$150</td><td class="right">$900</td></tr>
+      <tr><td>Snorkel rental & guides</td><td class="right">1</td><td class="right">$400</td><td class="right">$400</td></tr>
+      <tr><td>Hiking transport & permits</td><td class="right">1</td><td class="right">$300</td><td class="right">$300</td></tr>
+      <tr><td>Cultural practitioner stipends</td><td class="right">1</td><td class="right">$500</td><td class="right">$500</td></tr>
+      <tr><td>Park fees & permits</td><td class="right">1</td><td class="right">$200</td><td class="right">$200</td></tr>
+      <tr><td>Facilitator stipend</td><td class="right">1</td><td class="right">$1,200</td><td class="right">$1,200</td></tr>
+      <tr><td>Local helpers / volunteers</td><td class="right">1</td><td class="right">$400</td><td class="right">$400</td></tr>
+      <tr><td>Farm supplies & gear</td><td class="right">1</td><td class="right">$300</td><td class="right">$300</td></tr>
+      <tr><td>First aid / safety equipment</td><td class="right">1</td><td class="right">$200</td><td class="right">$200</td></tr>
+      <tr><td>Per-retreat contingency</td><td class="right">1</td><td class="right">$500</td><td class="right">$500</td></tr>
+      <tr class="subtotal-row"><td colspan="3">COST PER RETREAT</td><td class="right">$10,800</td></tr>
+    </tbody>
+  </table>
+
+  <div class="summary-box">
+    <div style="font-size:11px; letter-spacing:2px; color:#888;">YEAR 1 TOTAL — 3 RETREATS</div>
+    <div class="stat">$32,400</div>
+    <div style="font-size:12px; color:#666;">Approximately $1,800 per veteran in direct retreat costs (lodging donated)</div>
+  </div>
+
+  <div class="footer">TURNING THE TIDES &nbsp;•&nbsp; YEAR 1 BUDGET &nbsp;•&nbsp; PAGE 3</div>
+</div>
+
+<!-- PAGE 5: OPERATIONS & MARKETING -->
+<div class="page">
+  <span class="label">Detailed Line Items</span>
+  <h1 class="section-h1">Operations & Marketing</h1>
+
+  <h2 class="section-h2">Operations & Personnel</h2>
+  <table>
+    <thead><tr><th>Line Item</th><th class="right">Qty</th><th class="right">Unit Cost</th><th class="right">Total</th></tr></thead>
+    <tbody>
+      <tr><td>Founder / ED stipend (part-time)</td><td class="right">12 mo</td><td class="right">$2,500</td><td class="right">$30,000</td></tr>
+      <tr><td>Phone & internet</td><td class="right">12 mo</td><td class="right">$100</td><td class="right">$1,200</td></tr>
+      <tr><td>Software subscriptions</td><td class="right">12 mo</td><td class="right">$50</td><td class="right">$600</td></tr>
+      <tr><td>Office supplies & postage</td><td class="right">1</td><td class="right">$500</td><td class="right">$500</td></tr>
+      <tr><td>Founder travel (mainland ↔ Maui)</td><td class="right">2 trips</td><td class="right">$800</td><td class="right">$1,600</td></tr>
+      <tr class="subtotal-row"><td colspan="3">SUBTOTAL — OPERATIONS</td><td class="right">$33,900</td></tr>
+    </tbody>
+  </table>
+
+  <h2 class="section-h2">Marketing & Development</h2>
+  <table>
+    <thead><tr><th>Line Item</th><th class="right">Qty</th><th class="right">Unit Cost</th><th class="right">Total</th></tr></thead>
+    <tbody>
+      <tr><td>Crowdfunding platform fees</td><td class="right">1</td><td class="right">$500</td><td class="right">$500</td></tr>
+      <tr><td>Print materials (brochures, cards)</td><td class="right">1</td><td class="right">$500</td><td class="right">$500</td></tr>
+      <tr><td>Photography / videography</td><td class="right">2 days</td><td class="right">$750</td><td class="right">$1,500</td></tr>
+      <tr><td>Veteran outreach (events, conferences)</td><td class="right">1</td><td class="right">$1,000</td><td class="right">$1,000</td></tr>
+      <tr><td>Social media boosted posts</td><td class="right">12 mo</td><td class="right">$100</td><td class="right">$1,200</td></tr>
+      <tr><td>Donor cultivation events</td><td class="right">2</td><td class="right">$500</td><td class="right">$1,000</td></tr>
+      <tr class="subtotal-row"><td colspan="3">SUBTOTAL — MARKETING</td><td class="right">$5,700</td></tr>
+    </tbody>
+  </table>
+
+  <h2 class="section-h2">Contingency</h2>
+  <p>15% of total budget held in reserve for unforeseen costs, emergency travel, equipment repair, or opportunity grants. Industry standard for early-stage nonprofits.</p>
+  <table>
+    <tbody>
+      <tr class="total-row"><td>Year 1 Contingency Reserve</td><td class="right">$12,119</td></tr>
+    </tbody>
+  </table>
+
+  <div class="footer">TURNING THE TIDES &nbsp;•&nbsp; YEAR 1 BUDGET &nbsp;•&nbsp; PAGE 4</div>
+</div>
+
+<!-- PAGE 6: REVENUE / FUNDING -->
+<div class="page">
+  <span class="label">Funding Plan</span>
+  <h1 class="section-h1">Revenue Sources</h1>
+
+  <h2 class="section-h2">Year 1 Funding Targets</h2>
+  <table>
+    <thead><tr><th>Source</th><th class="right">Probability</th><th class="right">Target</th><th class="right">Conservative</th></tr></thead>
+    <tbody>
+      <tr><td>Foundation Grants</td><td class="right">Medium</td><td class="right">$60,000</td><td class="right">$30,000</td></tr>
+      <tr><td>Individual Donations</td><td class="right">High</td><td class="right">$25,000</td><td class="right">$15,000</td></tr>
+      <tr><td>Corporate Sponsorships</td><td class="right">Medium</td><td class="right">$20,000</td><td class="right">$10,000</td></tr>
+      <tr><td>Crowdfunding Launch</td><td class="right">High</td><td class="right">$15,000</td><td class="right">$10,000</td></tr>
+      <tr><td>Founder / Personal Capital</td><td class="right">Confirmed</td><td class="right">$10,000</td><td class="right">$10,000</td></tr>
+      <tr class="total-row"><td colspan="2">TOTAL</td><td class="right">$130,000</td><td class="right">$75,000</td></tr>
+    </tbody>
+  </table>
+
+  <h2 class="section-h2">Specific Grant Targets</h2>
+  <table>
+    <thead><tr><th>Grant Source</th><th>Focus</th><th class="right">Range</th></tr></thead>
+    <tbody>
+      <tr><td>Bob Woodruff Foundation</td><td>Veteran wellness</td><td class="right">$10k - $50k</td></tr>
+      <tr><td>Gary Sinise Foundation</td><td>Veteran support</td><td class="right">$10k - $25k</td></tr>
+      <tr><td>Semper Fi & America's Fund</td><td>Combat veterans</td><td class="right">$10k - $30k</td></tr>
+      <tr><td>USDA Rural Development</td><td>Agriculture / rural</td><td class="right">varies</td></tr>
+      <tr><td>Local Hawaii Foundations</td><td>Community-based</td><td class="right">$5k - $20k</td></tr>
+    </tbody>
+  </table>
+
+  <p style="font-style:italic; margin-top:12px;">First-year nonprofits typically secure 40-60% of their target funding. The "Conservative" column above reflects a realistic worst-case scenario — even at this level, the program can run 2 retreats and serve 12 veterans.</p>
+
+  <div class="footer">TURNING THE TIDES &nbsp;•&nbsp; YEAR 1 BUDGET &nbsp;•&nbsp; PAGE 5</div>
+</div>
+
+<!-- PAGE 7: 5-YEAR PROJECTION -->
+<div class="page">
+  <span class="label">Long-Term Projection</span>
+  <h1 class="section-h1">5-Year Outlook</h1>
+
+  <p>This projection assumes successful execution of Year 1, modest grant growth, and the addition of paid civilian wellness retreats as a revenue stream beginning in Year 2.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Year</th>
+        <th class="right">Retreats</th>
+        <th class="right">Veterans Served</th>
+        <th class="right">Annual Budget</th>
+        <th class="right">Revenue Goal</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Year 1 (Pilot)</td><td class="right">3</td><td class="right">18</td><td class="right">$92,900</td><td class="right">$120,000</td></tr>
+      <tr><td>Year 2 (Build)</td><td class="right">5</td><td class="right">30</td><td class="right">$175,000</td><td class="right">$200,000</td></tr>
+      <tr><td>Year 3 (Scale)</td><td class="right">8</td><td class="right">48</td><td class="right">$250,000</td><td class="right">$280,000</td></tr>
+      <tr><td>Year 4</td><td class="right">10</td><td class="right">60</td><td class="right">$325,000</td><td class="right">$360,000</td></tr>
+      <tr><td>Year 5 (Mature)</td><td class="right">12</td><td class="right">72</td><td class="right">$400,000</td><td class="right">$440,000</td></tr>
+      <tr class="total-row"><td>5-YEAR TOTAL</td><td class="right">38</td><td class="right">~228</td><td class="right">$1.24M</td><td class="right">$1.40M</td></tr>
+    </tbody>
+  </table>
+
+  <h2 class="section-h2">Strategic Milestones</h2>
+  <table>
+    <thead><tr><th>Year</th><th>Key Milestones</th></tr></thead>
+    <tbody>
+      <tr><td>Year 1</td><td>501(c)(3) granted, 3 pilot retreats, board recruited, alumni network started</td></tr>
+      <tr><td>Year 2</td><td>Civilian wellness retreats launched, part-time program director hired, 3-month operating reserve achieved</td></tr>
+      <tr><td>Year 3</td><td>Permanent guest cabins built, full-time program staff, audited financials, signature annual fundraising event</td></tr>
+      <tr><td>Year 4</td><td>National alumni mentorship program, second retreat location explored</td></tr>
+      <tr><td>Year 5</td><td>Endowment fund established, 200+ veterans served lifetime, recognized as leading veteran retreat program in Hawaii</td></tr>
+    </tbody>
+  </table>
+
+  <div class="footer">TURNING THE TIDES &nbsp;•&nbsp; YEAR 1 BUDGET &nbsp;•&nbsp; PAGE 6</div>
+</div>
+
+<!-- PAGE 8: NOTES -->
+<div class="page cover">
+  <div class="badge">For Donors & Funders</div>
+  <h1 style="font-size:56px;">Every Dollar<br>Reaches A <span>Veteran</span>.</h1>
+  <div class="gold-line"></div>
+
+  <p style="text-align:center; max-width:600px; color:#a0b8c0; font-size:18px; margin-top:24px;">
+    Turning the Tides is committed to transparency in every dollar spent. Annual financial reports will be published publicly. Audited financials beginning Year 3.
+  </p>
+
+  <div style="margin-top:40px; text-align:center; line-height:2; color:white;">
+    <div style="color:var(--gold); font-family:'Oswald',sans-serif; font-size:22px; letter-spacing:3px;">JOHN COLLINS</div>
+    <div style="font-size:13px; color:#a0b8c0;">FOUNDER, TURNING THE TIDES</div>
+    <div style="margin-top:24px; font-size:16px;">📞 (615) 739-3008</div>
+    <div style="font-size:16px;">✉ spc2233@hotmail.com</div>
+  </div>
+
+  <div class="meta" style="margin-top:auto;">
+    Turning the Tides &nbsp;•&nbsp; A 501(c)(3) Nonprofit in Formation<br>
+    Maui, Hawaii
+  </div>
+</div>
+
+</body>
+</html>

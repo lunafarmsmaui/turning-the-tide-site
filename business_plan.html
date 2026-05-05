@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Turning the Tides — Business Plan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --navy:   #0a1628;
+      --gold:   #c9a84c;
+      --olive:  #4a5e3a;
+      --gray:   #555;
+      --light:  #f5f3ed;
+    }
+
+    * { margin:0; padding:0; box-sizing:border-box; }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background: #888;
+      color: #222;
+      line-height: 1.6;
+      padding: 40px 20px;
+    }
+
+    .page {
+      width: 8.5in;
+      min-height: 11in;
+      margin: 20px auto;
+      background: white;
+      padding: 0.75in 0.85in;
+      box-shadow: 0 6px 30px rgba(0,0,0,0.4);
+      page-break-after: always;
+    }
+    .page:last-child { page-break-after: auto; }
+
+    h1, h2, h3, h4 { font-family: 'Oswald', sans-serif; }
+
+    /* Cover page */
+    .cover {
+      background: linear-gradient(160deg, var(--navy) 0%, #0d2d3a 50%, #0a1e10 100%);
+      color: white;
+      display: flex; flex-direction: column;
+      justify-content: center; align-items: center;
+      text-align: center;
+      padding: 1.5in;
+    }
+    .cover .badge {
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      padding: 6px 16px;
+      letter-spacing: 3px;
+      font-size: 12px;
+      text-transform: uppercase;
+      margin-bottom: 40px;
+    }
+    .cover h1 {
+      font-size: 84px;
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: 2px;
+    }
+    .cover h1 span { color: var(--gold); }
+    .cover .tagline {
+      margin-top: 32px;
+      font-size: 18px;
+      color: #a0b8c0;
+      font-style: italic;
+    }
+    .cover .gold-line {
+      width: 80px; height: 4px;
+      background: var(--gold);
+      margin: 32px 0;
+    }
+    .cover h2 {
+      font-size: 28px;
+      font-weight: 400;
+      letter-spacing: 4px;
+      color: white;
+    }
+    .cover .meta {
+      margin-top: auto;
+      font-size: 13px;
+      letter-spacing: 2px;
+      color: #8aa0aa;
+      text-transform: uppercase;
+    }
+
+    /* Content pages */
+    .page h1.section-h1 {
+      font-size: 36px;
+      color: var(--navy);
+      letter-spacing: 1px;
+      border-bottom: 3px solid var(--gold);
+      padding-bottom: 10px;
+      margin-bottom: 24px;
+    }
+
+    .page h2.section-h2 {
+      font-size: 22px;
+      color: var(--olive);
+      margin-top: 28px;
+      margin-bottom: 12px;
+      letter-spacing: 1px;
+    }
+
+    .page h3 {
+      font-size: 17px;
+      color: var(--navy);
+      margin-top: 18px;
+      margin-bottom: 8px;
+      letter-spacing: 0.5px;
+    }
+
+    .page p {
+      font-size: 14px;
+      line-height: 1.7;
+      margin-bottom: 14px;
+    }
+
+    .page ul, .page ol {
+      padding-left: 22px;
+      margin-bottom: 16px;
+    }
+    .page li {
+      font-size: 14px;
+      line-height: 1.7;
+      margin-bottom: 6px;
+    }
+
+    .label {
+      display: inline-block;
+      font-family: 'Oswald', sans-serif;
+      font-size: 11px;
+      letter-spacing: 3px;
+      color: var(--gold);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 13px;
+    }
+    th {
+      background: var(--navy);
+      color: white;
+      padding: 10px;
+      text-align: left;
+      letter-spacing: 1px;
+      font-family: 'Oswald', sans-serif;
+      font-size: 12px;
+    }
+    td {
+      padding: 8px 10px;
+      border-bottom: 1px solid #ddd;
+    }
+    tr:nth-child(even) td { background: #f9f7f2; }
+
+    .pull-quote {
+      font-family: 'Oswald', sans-serif;
+      font-style: italic;
+      font-size: 17px;
+      color: var(--navy);
+      border-left: 4px solid var(--gold);
+      padding: 8px 18px;
+      margin: 18px 0;
+      background: #faf7ee;
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin: 16px 0;
+    }
+    .stat-box {
+      background: #faf7ee;
+      border-left: 3px solid var(--gold);
+      padding: 14px 16px;
+    }
+    .stat-num {
+      font-family: 'Oswald', sans-serif;
+      font-size: 28px;
+      color: var(--olive);
+      font-weight: 700;
+    }
+    .stat-label {
+      font-size: 12px;
+      color: var(--gray);
+      letter-spacing: 0.5px;
+      margin-top: 2px;
+    }
+
+    .footer {
+      position: absolute;
+      bottom: 0.4in;
+      left: 0.85in;
+      right: 0.85in;
+      font-size: 10px;
+      color: #888;
+      text-align: center;
+      letter-spacing: 1px;
+      padding-top: 8px;
+      border-top: 1px solid #ddd;
+    }
+
+    .page-rel { position: relative; }
+
+    /* Print styling */
+    @media print {
+      body { background: white; padding: 0; }
+      .page {
+        margin: 0;
+        box-shadow: none;
+        page-break-after: always;
+      }
+      .page:last-child { page-break-after: auto; }
+      .print-banner { display: none !important; }
+    }
+
+    /* Print instruction banner */
+    .print-banner {
+      position: fixed; top: 12px; right: 12px;
+      background: var(--gold); color: var(--navy);
+      padding: 10px 16px; border-radius: 6px;
+      font-family: 'Oswald', sans-serif;
+      font-size: 13px; letter-spacing: 1px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.3);
+      z-index: 100; cursor: pointer;
+    }
+    .print-banner:hover { background: #e0bc5c; }
+  </style>
+</head>
+<body>
+
+<div class="print-banner" onclick="window.print()">📄 Save as PDF (Ctrl+P)</div>
+
+<!-- COVER PAGE -->
+<div class="page cover">
+  <div class="badge">Business Plan</div>
+  <h1>TURNING<br>THE <span>TIDES</span></h1>
+  <div class="gold-line"></div>
+  <h2>VETERAN RETREAT PROGRAM</h2>
+  <div class="tagline">Healing combat veterans through land, sea, and community.</div>
+  <div class="meta">
+    Founder: John Collins<br>
+    Maui, Hawaii &nbsp;•&nbsp; A 501(c)(3) in Formation<br>
+    May 2026
+  </div>
+</div>
+
+<!-- PAGE 2: EXECUTIVE SUMMARY -->
+<div class="page page-rel">
+  <span class="label">Section 1</span>
+  <h1 class="section-h1">Executive Summary</h1>
+
+  <p>Turning the Tides is a 501(c)(3) nonprofit retreat program serving combat veterans living with PTSD. Our retreats — set on private farmland on the island of Maui, Hawaii — combine three evidence-backed therapeutic pillars: meaningful agricultural work, outdoor ocean and land activities, and small-cohort peer community.</p>
+
+  <p>Founded by John Collins, a U.S. Army infantryman who served two combat tours in Baghdad (2008 and 2010), Turning the Tides exists because of what helped him heal: not clinical settings, but other veterans, real work, and a place that felt like home. Our program is built to give that experience to others.</p>
+
+  <div class="pull-quote">
+    "I served two combat tours in Baghdad. What helped me come home wasn't a clinic — it was other veterans, real work, and time on the land. I want every combat veteran to have that."
+  </div>
+
+  <p>We serve combat veterans of any U.S. military branch dealing with post-traumatic stress, post-deployment readjustment, and the isolation that often follows. Retreats are always free for veterans, funded by grants, individual donations, corporate sponsorships, and paid civilian wellness retreats that subsidize the veteran program.</p>
+
+  <h2 class="section-h2">Year 1 Goals</h2>
+  <ul>
+    <li>Run 2-3 pilot retreats serving 12-20 veterans</li>
+    <li>Establish 501(c)(3) status</li>
+    <li>Secure $130,000 in funding</li>
+    <li>Build operational infrastructure for scale</li>
+  </ul>
+
+  <h2 class="section-h2">Year 3 Goals</h2>
+  <ul>
+    <li>Run 6-8 retreats per year</li>
+    <li>Serve 40-60 veterans annually</li>
+    <li>Build a national alumni network</li>
+    <li>Establish Turning the Tides as a leading agri-therapy retreat for combat veterans</li>
+  </ul>
+
+  <div class="footer">TURNING THE TIDES &nbsp;•&nbsp; BUSINESS PLAN &nbsp;•&nbsp; PAGE 1</div>
+</div>
+
+<!-- PAGE 3: MISSION & VALUES -->
+<div class="page page-rel">
+  <span class="label">Section 2</span>
+  <h1 class="section-h1">Mission, Vision & Values</h1>
+
+  <h2 class="section-h2">Mission</h2>
+  <p>To empower combat veterans living with PTSD through immersive retreat experiences rooted in farm work, nature, and community — helping them reconnect with the land, with each other, and with themselves.</p>
+
+  <h2 class="section-h2">Vision</h2>
+  <p>A future where every combat veteran has access to a supportive community and a healing environment to work through what they carry home — and where the strength they bring to that journey lifts up the next veteran behind them.</p>
+
+  <h2 class="section-h2">Core Values</h2>
+  <ul>
+    <li><strong>Authentic Service</strong> — Built by a combat veteran, for combat veterans. No clinical detachment, no condescension.</li>
+    <li><strong>Honest Work</strong> — Real labor that produces real results. The land doesn't care about rank or politics.</li>
+    <li><strong>Aloha</strong> — Genuine connection to the people, land, and traditions of Maui.</li>
+    <li><strong>Always Free for Veterans</strong> — Cost will never be a barrier to participation.</li>
+    <li><strong>Privacy & Trust</strong> — A veteran's story is theirs to tell. We protect, we don't disclose.</li>
+  </ul>
+
+  <div class="footer">TURNING THE TIDES &nbsp;•&nbsp; BUSINESS PLAN &nbsp;•&nbsp; PAGE 2</div>
+</div>
+
+<!-- PAGE 4: THE PROBLEM -->
+<div class="page page-rel">
+  <span class="label">Section 3</span>
+  <h1 class="section-h1">The Problem</h1>
+
+  <h2 class="section-h2">Combat PTSD by the Numbers</h2>
+  <div class="stat-grid">
+    <div class="stat-box">
+      <div class="stat-num">20%</div>
+      <div class="stat-label">Of post-9/11 veterans experience PTSD (VA, RAND)</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-num">17/day</div>
+      <div class="stat-label">Average veteran suicides per day in the U.S.</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-num">2-4×</div>
+      <div class="stat-label">Higher PTSD risk for combat vs non-combat veterans</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-num">30+ days</div>
+      <div class="stat-label">Average VA mental health appointment wait times</div>
+    </div>
+  </div>
+
+  <h2 class="section-h2">Gaps in Existing Services</h2>
+  <p>Conventional treatment options often fall short for combat veterans:</p>
+  <ul>
+    <li>Clinical settings can feel sterile and detached</li>
+    <li>Group therapy with non-veterans struggles to address shared experience</li>
+    <li>Pharmaceutical-only approaches manage symptoms but rarely address underlying disconnection</li>
+    <li>Many veterans simply do not seek help — for reasons of stigma, distrust, or scheduling</li>
+  </ul>
+
+  <h2 class="section-h2">What Veterans Tell Us Works</h2>
+  <p>Repeated research and personal accounts (including the founder's own) point to:</p>
+  <ul>
+    <li>Peer connection with other combat veterans</li>
+    <li>Physical work in nature — particularly farming and ocean activities</li>
+    <li>Structured but pressure-free environments</li>
+    <li>Time away from triggering daily contexts</li>
+    <li>Cultural humility and warm hospitality</li>
+  </ul>
+
+  <div class="footer">TURNING THE TIDES &nbsp;•&nbsp; BUSINESS PLAN &nbsp;•&nbsp; PAGE 3</div>
+</div>
+
+<!-- PAGE 5: PROGRAM -->
+<div class="page page-rel">
+  <span class="label">Section 4</span>
+  <h1 class="section-h1">Program Overview</h1>
+
+  <p>Turning the Tides operates 3-5 day immersive retreats for cohorts of 4-8 combat veterans at a time. The program rests on three pillars:</p>
+
+  <h2 class="section-h2" style="display:flex; align-items:center; gap:10px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4a5e3a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 20H17"/><path d="M12 20V9"/><path d="M12 9C12 9 8 7 6 4C6 4 8 9 12 9Z"/><path d="M12 9C12 9 16 7 18 4C18 4 16 9 12 9Z"/></svg>Pillar One — Farm & Land Work</h2>
+  <p>Hands-on agricultural therapy partnering with local Maui farmers and agricultural cooperatives. Veterans participate in:</p>
+  <ul>
+    <li>Planting, harvesting, and tending traditional Hawaiian crops (kalo/taro, ulu/breadfruit, sugarcane)</li>
+    <li>Care for livestock — chickens, goats, bees</li>
+    <li>Building and maintaining farm infrastructure</li>
+    <li>Preparing and sharing meals from food they helped grow</li>
+  </ul>
+  <p><em>Therapeutic basis: Horticultural and agricultural therapy are evidence-backed interventions for PTSD, shown to reduce cortisol, restore daily routine, and rebuild a sense of purpose.</em></p>
+
+  <h2 class="section-h2" style="display:flex; align-items:center; gap:10px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4a5e3a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9C5 7 7 7 9 9C11 11 13 11 15 9C17 7 19 7 21 9"/><path d="M3 14C5 12 7 12 9 14C11 16 13 16 15 14C17 12 19 12 21 14"/><path d="M3 19C5 17 7 17 9 19C11 21 13 21 15 19C17 17 19 17 21 19"/></svg>Pillar Two — Outdoor & Ocean Activities</h2>
+  <p>Veterans engage with Maui's natural environment through surf instruction (Ho'okipa, Launiupoko, Lahaina), snorkeling at Kihei beaches, Molokini Crater, and Honolua Bay, outrigger canoe paddling, hiking Haleakalā summit, the Pipiwai Trail, and Iao Valley, plus whale watching, yoga, and stargazing.</p>
+  <p><em>Therapeutic basis: Physical activity in natural environments — particularly water-based — reduces hyperarousal and quiets the autonomic nervous system.</em></p>
+
+  <h2 class="section-h2" style="display:flex; align-items:center; gap:10px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4a5e3a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3"/><circle cx="5" cy="10" r="2"/><circle cx="19" cy="10" r="2"/><path d="M3 19C3 16 5 14 8 14H16C19 14 21 16 21 19"/></svg>Pillar Three — Community & Connection</h2>
+  <p>Small cohorts of 4-8 veterans rebuild social connection and trust through shared meals, evening fire circles, peer-led discussions, one-on-one mentorship, integration with the local Maui community, and a post-retreat alumni network for ongoing connection.</p>
+  <p><em>Therapeutic basis: Peer support has consistently been identified as one of the most predictive factors in long-term recovery from combat PTSD.</em></p>
+
+  <div class="footer">TURNING THE TIDES &nbsp;•&nbsp; BUSINESS PLAN &nbsp;•&nbsp; PAGE 4</div>
+</div>
+
+<!-- PAGE 6: FOUNDER STORY -->
+<div class="page page-rel">
+  <span class="label">Section 5</span>
+  <h1 class="section-h1">Founder's Story</h1>
+
+  <p>John Collins served two combat tours in Baghdad, Iraq with the U.S. Army Infantry — in 2008 and again in 2010. After returning home, he experienced post-traumatic stress in ways he was not prepared for. Like many combat veterans, the weight he carried home didn't show up on an X-ray.</p>
+
+  <p>What helped him turn things around wasn't a single program or clinical intervention — it was other veterans. People who had been there. Who didn't need explanations. Who simply understood. Combined with time on the land and the slower pace of life on Maui, that community became the foundation of his recovery.</p>
+
+  <p>Turning the Tides is built directly from that experience. The program isn't theoretical — it is a structured offering of the things that John knows worked for him, designed so other combat veterans can access them too.</p>
+
+  <h2 class="section-h2">Service Record</h2>
+  <ul>
+    <li><strong>Branch:</strong> United States Army</li>
+    <li><strong>MOS:</strong> Infantry</li>
+    <li><strong>Combat Deployments:</strong> Baghdad, Iraq — 2008</li>
+    <li><strong>Combat Deployments:</strong> Baghdad, Iraq — 2010</li>
+  </ul>
+
+  <div class="pull-quote">
+    "I know what it feels like to come home from war and not know how to live in peace. Turning the Tides exists because of what saved me — and I want that for every veteran still fighting their invisible battle."
+  </div>
+
+  <div class="footer">TURNING THE TIDES &nbsp;•&nbsp; BUSINESS PLAN &nbsp;•&nbsp; PAGE 5</div>
+</div>
+
+<!-- PAGE 7: OPERATIONS -->
+<div class="page page-rel">
+  <span class="label">Section 6</span>
+  <h1 class="section-h1">Operations Plan</h1>
+
+  <h2 class="section-h2">Location & Facility</h2>
+  <ul>
+    <li><strong>Land:</strong> Private farmland on Maui, Hawaii (use granted by partner)</li>
+    <li><strong>Capacity:</strong> 4-8 veterans per retreat</li>
+    <li><strong>Local partnerships:</strong> Maui farms, surf instructors, cultural practitioners, transportation providers</li>
+  </ul>
+
+  <h2 class="section-h2">Retreat Structure</h2>
+  <ul>
+    <li><strong>Duration:</strong> 3-5 days per retreat</li>
+    <li><strong>Frequency Year 1:</strong> 2-3 retreats</li>
+    <li><strong>Frequency Year 3+:</strong> 6-8 retreats annually</li>
+    <li><strong>Cohort size:</strong> 4-8 veterans</li>
+    <li><strong>Daily rhythm:</strong> Morning farm work → midday meal → afternoon outdoor activity or rest → evening shared meal and optional discussion</li>
+  </ul>
+
+  <h2 class="section-h2">Staffing (Initial Phase)</h2>
+  <ul>
+    <li><strong>Founder/Executive Director:</strong> John Collins (full-time)</li>
+    <li><strong>Retreat Facilitators:</strong> 1-2 per retreat (paid stipend; ideally veteran peers)</li>
+    <li><strong>Local Activity Partners:</strong> Independent contractors for farm, surf, hiking</li>
+    <li><strong>Volunteer Support:</strong> Local community members for meals, hospitality, transport</li>
+  </ul>
+
+  <h2 class="section-h2">Quality & Safety</h2>
+  <ul>
+    <li>General liability insurance</li>
+    <li>Medical clearance required for all participants</li>
+    <li>Crisis response protocol — Veterans Crisis Line (988 press 1) and local emergency contacts on file</li>
+    <li>All staff trained in basic mental health first aid</li>
+  </ul>
+
+  <div class="footer">TURNING THE TIDES &nbsp;•&nbsp; BUSINESS PLAN &nbsp;•&nbsp; PAGE 6</div>
+</div>
+
+<!-- PAGE 8: BUDGET -->
+<div class="page page-rel">
+  <span class="label">Section 7</span>
+  <h1 class="section-h1">Financial Projections</h1>
+
+  <h2 class="section-h2">Year 1 Budget Summary</h2>
+  <table>
+    <thead>
+      <tr><th>Category</th><th style="text-align:right;">Annual</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Startup & Legal Costs</td><td style="text-align:right;">$5,000</td></tr>
+      <tr><td>Insurance</td><td style="text-align:right;">$4,800</td></tr>
+      <tr><td>3 Pilot Retreats (3-5 days, lodging donated)</td><td style="text-align:right;">$32,400</td></tr>
+      <tr><td>Founder Stipend (part-time)</td><td style="text-align:right;">$30,000</td></tr>
+      <tr><td>Marketing/Outreach</td><td style="text-align:right;">$5,700</td></tr>
+      <tr><td>Operations/Admin</td><td style="text-align:right;">$3,900</td></tr>
+      <tr><td>Contingency (15%)</td><td style="text-align:right;">$12,100</td></tr>
+      <tr style="background:var(--navy); color:white; font-weight:700;"><td style="background:var(--navy); color:white;">YEAR 1 TOTAL</td><td style="text-align:right; background:var(--navy); color:white;">$92,900</td></tr>
+    </tbody>
+  </table>
+
+  <h2 class="section-h2">3-Year Outlook</h2>
+  <table>
+    <thead>
+      <tr><th>Year</th><th>Retreats</th><th>Veterans Served</th><th style="text-align:right;">Budget</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Year 1 (Pilot)</td><td>3</td><td>18</td><td style="text-align:right;">$92,900</td></tr>
+      <tr><td>Year 2 (Build)</td><td>5</td><td>30</td><td style="text-align:right;">$175,000</td></tr>
+      <tr><td>Year 3 (Scale)</td><td>8</td><td>48</td><td style="text-align:right;">$250,000</td></tr>
+      <tr><td>Year 4</td><td>10</td><td>60</td><td style="text-align:right;">$325,000</td></tr>
+      <tr><td>Year 5</td><td>12</td><td>72</td><td style="text-align:right;">$400,000</td></tr>
+    </tbody>
+  </table>
+
+  <h2 class="section-h2">Cost Per Veteran Served</h2>
+  <p>Year 1: ~$5,161 per veteran. Year 3 (with scale): ~$5,200 per veteran. By comparison, the VA spends ~$11,000 per year on outpatient PTSD care for a single veteran. Lodging donated by partner reduces direct costs significantly.</p>
+
+  <div class="footer">TURNING THE TIDES &nbsp;•&nbsp; BUSINESS PLAN &nbsp;•&nbsp; PAGE 7</div>
+</div>
+
+<!-- PAGE 9: FUNDING STRATEGY -->
+<div class="page page-rel">
+  <span class="label">Section 8</span>
+  <h1 class="section-h1">Funding Strategy</h1>
+
+  <h2 class="section-h2">Year 1 Funding Targets</h2>
+  <table>
+    <thead>
+      <tr><th>Source</th><th style="text-align:right;">Target</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Foundation Grants</td><td style="text-align:right;">$60,000</td></tr>
+      <tr><td>Individual Donations</td><td style="text-align:right;">$25,000</td></tr>
+      <tr><td>Corporate Sponsorships</td><td style="text-align:right;">$20,000</td></tr>
+      <tr><td>Crowdfunding Launch Campaign</td><td style="text-align:right;">$15,000</td></tr>
+      <tr><td>Founder/Personal Capital</td><td style="text-align:right;">$10,000</td></tr>
+      <tr style="background:var(--navy); color:white; font-weight:700;"><td style="background:var(--navy); color:white;">TOTAL</td><td style="text-align:right; background:var(--navy); color:white;">$130,000</td></tr>
+    </tbody>
+  </table>
+
+  <h2 class="section-h2">Specific Grant Targets (Year 1)</h2>
+  <table>
+    <thead>
+      <tr><th>Grant</th><th style="text-align:right;">Range</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Bob Woodruff Foundation</td><td style="text-align:right;">$10k - $50k</td></tr>
+      <tr><td>Gary Sinise Foundation</td><td style="text-align:right;">$10k - $25k</td></tr>
+      <tr><td>Semper Fi & America's Fund</td><td style="text-align:right;">$10k - $30k</td></tr>
+      <tr><td>USDA Rural Development</td><td style="text-align:right;">varies</td></tr>
+      <tr><td>Local Hawaii Foundations</td><td style="text-align:right;">$5k - $20k</td></tr>
+    </tbody>
+  </table>
+
+  <h2 class="section-h2">Long-Term Sustainability</h2>
+  <p>Turning the Tides will diversify revenue across foundations, individuals, corporates, and earned income through paid civilian wellness retreats — using the same land and infrastructure between veteran retreats to generate revenue that subsidizes free veteran spots.</p>
+
+  <div class="footer">TURNING THE TIDES &nbsp;•&nbsp; BUSINESS PLAN &nbsp;•&nbsp; PAGE 8</div>
+</div>
+
+<!-- PAGE 10: TIMELINE -->
+<div class="page page-rel">
+  <span class="label">Section 9</span>
+  <h1 class="section-h1">Implementation Timeline</h1>
+
+  <h2 class="section-h2">Months 1-3 (Pre-Launch)</h2>
+  <ul>
+    <li>File 501(c)(3) paperwork</li>
+    <li>Recruit founding board (5-7 members)</li>
+    <li>Set up bank account and accounting</li>
+    <li>Secure insurance</li>
+    <li>Land use agreement formalized in writing</li>
+    <li>Launch crowdfunding campaign</li>
+  </ul>
+
+  <h2 class="section-h2">Months 4-6 (Foundation)</h2>
+  <ul>
+    <li>Apply for first 3 grants</li>
+    <li>Recruit first cohort of veterans</li>
+    <li>Lock in local partnerships (farm, surf, transport)</li>
+    <li>Develop intake/screening process</li>
+    <li>Hire/contract first facilitator</li>
+  </ul>
+
+  <h2 class="section-h2">Months 7-9 (First Pilot)</h2>
+  <ul>
+    <li>Run first retreat (4-6 veterans)</li>
+    <li>Document everything</li>
+    <li>Post-retreat survey/analysis</li>
+    <li>Use data for future grant applications</li>
+  </ul>
+
+  <h2 class="section-h2">Months 10-12 (Iterate)</h2>
+  <ul>
+    <li>Run 2nd and 3rd retreats with refined program</li>
+    <li>Apply for larger grants based on pilot data</li>
+    <li>Begin alumni network formation</li>
+    <li>Annual report and donor communications</li>
+  </ul>
+
+  <div class="footer">TURNING THE TIDES &nbsp;•&nbsp; BUSINESS PLAN &nbsp;•&nbsp; PAGE 9</div>
+</div>
+
+<!-- PAGE 11: GOVERNANCE -->
+<div class="page page-rel">
+  <span class="label">Section 10</span>
+  <h1 class="section-h1">Governance & Team</h1>
+
+  <h2 class="section-h2">Founder</h2>
+  <p><strong>John Collins</strong> — Founder & Executive Director<br>
+  U.S. Army Infantry, OIF combat veteran (Baghdad 2008, 2010)</p>
+
+  <h2 class="section-h2">Founding Board (To Be Recruited)</h2>
+  <p>A 5-7 person founding board should include:</p>
+  <ul>
+    <li>A combat veteran with leadership experience</li>
+    <li>A nonprofit operations professional (preferably with 501(c)(3) experience)</li>
+    <li>A licensed mental health professional with veteran experience</li>
+    <li>A finance/accounting professional</li>
+    <li>A Hawaii-based community member</li>
+    <li>A donor or major donor representative</li>
+  </ul>
+
+  <h2 class="section-h2">Risk Management</h2>
+  <p>Turning the Tides has identified and planned mitigation for operational, financial, and reputational risks:</p>
+  <ul>
+    <li><strong>Participant safety</strong> — medical clearance, liability insurance, on-island medical access, crisis protocol</li>
+    <li><strong>Mental health crisis</strong> — partnerships with local providers, Veterans Crisis Line on file</li>
+    <li><strong>Funding diversification</strong> — never more than 30% from a single source</li>
+    <li><strong>Cash flow</strong> — 3-month operating reserve target by end of Year 1</li>
+    <li><strong>Founder dependence</strong> — strong board and program team</li>
+  </ul>
+
+  <div class="footer">TURNING THE TIDES &nbsp;•&nbsp; BUSINESS PLAN &nbsp;•&nbsp; PAGE 10</div>
+</div>
+
+<!-- PAGE 12: CONTACT -->
+<div class="page cover">
+  <div class="badge">Get In Touch</div>
+  <h1 style="font-size:64px;">Let's Turn<br>The <span>Tide</span>.</h1>
+  <div class="gold-line"></div>
+
+  <div style="margin-top:40px; text-align:center; line-height:2;">
+    <div style="color:var(--gold); font-family:'Oswald',sans-serif; font-size:24px; letter-spacing:3px;">JOHN COLLINS</div>
+    <div style="font-size:14px; color:#a0b8c0;">FOUNDER, TURNING THE TIDES</div>
+    <div style="margin-top:32px; font-size:18px;">📞 (615) 739-3008</div>
+    <div style="font-size:18px;">✉ spc2233@hotmail.com</div>
+    <div style="margin-top:24px; font-size:14px; color:#a0b8c0;">Maui, Hawaii</div>
+  </div>
+
+  <div class="meta" style="margin-top:auto;">
+    Turning the Tides &nbsp;•&nbsp; A 501(c)(3) Nonprofit in Formation<br>
+    Healing Through Land, Sea, and Community
+  </div>
+</div>
+
+</body>
+</html>
