@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Turning the Tides — Lean Year 1 Budget</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root { --navy:#0a1628; --gold:#c9a84c; --olive:#4a5e3a; --gray:#555; }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'Open Sans',sans-serif; background:#888; color:#222; line-height:1.6; padding:40px 20px; }
+    h1, h2, h3, h4 { font-family:'Oswald',sans-serif; }
+    .page { width:8.5in; min-height:11in; margin:20px auto; background:white; padding:0.7in 0.85in; box-shadow:0 6px 30px rgba(0,0,0,0.4); page-break-after:always; position:relative; }
+    .page:last-child { page-break-after:auto; }
+    .cover { background:linear-gradient(160deg, #1a3322 0%, #0a1628 50%, #1a3322 100%); color:white; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:1.4in; }
+    .cover .badge { border:1px solid var(--gold); color:var(--gold); padding:6px 16px; letter-spacing:3px; font-size:12px; text-transform:uppercase; margin-bottom:30px; }
+    .cover h1 { font-size:64px; font-weight:700; line-height:1; letter-spacing:2px; }
+    .cover h1 span { color:var(--gold); }
+    .cover h2 { font-size:24px; font-weight:400; letter-spacing:4px; color:white; margin-top:28px; }
+    .cover .gold-line { width:80px; height:4px; background:var(--gold); margin:28px 0; }
+    .cover .meta { margin-top:auto; font-size:13px; letter-spacing:2px; color:#8aa0aa; text-transform:uppercase; }
+    .label { display:inline-block; font-family:'Oswald',sans-serif; font-size:11px; letter-spacing:3px; color:var(--gold); margin-bottom:6px; text-transform:uppercase; }
+    h1.section-h1 { font-size:32px; color:var(--navy); letter-spacing:1px; border-bottom:3px solid var(--gold); padding-bottom:8px; margin-bottom:18px; }
+    h2.section-h2 { font-size:19px; color:var(--olive); margin-top:22px; margin-bottom:8px; letter-spacing:1px; }
+    p { font-size:13px; line-height:1.6; margin-bottom:12px; }
+    table { width:100%; border-collapse:collapse; margin:10px 0 18px; font-size:12.5px; }
+    th { background:var(--navy); color:white; padding:8px 10px; text-align:left; letter-spacing:1px; font-family:'Oswald',sans-serif; font-size:11px; }
+    th.right { text-align:right; }
+    td { padding:6px 10px; border-bottom:1px solid #ddd; }
+    td.right { text-align:right; }
+    td.bold { font-weight:700; }
+    tr:nth-child(even) td { background:#f9f7f2; }
+    .total-row td { background:var(--navy) !important; color:white !important; font-weight:700; font-size:13.5px; }
+    .subtotal-row td { background:#faf3dd !important; font-weight:600; border-top:2px solid var(--gold); }
+    .summary-box { background:#f0f7e8; border-left:4px solid var(--olive); padding:14px 18px; margin:14px 0; font-size:13px; }
+    .summary-box .stat { font-family:'Oswald',sans-serif; font-size:24px; color:var(--olive); font-weight:700; }
+    .savings-pill { display:inline-block; background:var(--olive); color:white; font-family:'Oswald',sans-serif; font-size:10px; padding:2px 8px; border-radius:10px; letter-spacing:1px; margin-left:8px; }
+    .footer { position:absolute; bottom:0.3in; left:0.85in; right:0.85in; font-size:10px; color:#888; text-align:center; letter-spacing:1px; padding-top:6px; border-top:1px solid #ddd; }
+    @media print { body{background:white;padding:0;} .page{margin:0;box-shadow:none;} .print-banner{display:none!important;} }
+    .print-banner { position:fixed; top:12px; right:12px; background:var(--gold); color:var(--navy); padding:10px 16px; border-radius:6px; font-family:'Oswald',sans-serif; font-size:13px; letter-spacing:1px; box-shadow:0 4px 14px rgba(0,0,0,0.3); z-index:100; cursor:pointer; }
+  </style>
+</head>
+<body>
+
+<div class="print-banner" onclick="window.print()">📄 Save as PDF (Ctrl+P)</div>
+
+<!-- COVER -->
+<div class="page cover">
+  <div class="badge">Lean Year 1 Budget</div>
+  <h1>BOOTSTRAP<br>EDITION</h1>
+  <div class="gold-line"></div>
+  <h2>$53,000 PILOT YEAR</h2>
+  <p style="font-style:italic; margin-top:20px; max-width:5in; color:#a0b8c0;">
+    The leanest possible Year 1 plan. 100% of donations reach veterans. Built on community partnerships, donated services, and an unpaid founder.
+  </p>
+  <div class="meta">
+    Founder: John Collins<br>
+    Maui, Hawaii &nbsp;•&nbsp; A 501(c)(3) in Formation
+  </div>
+</div>
+
+<!-- PAGE 2: SUMMARY -->
+<div class="page">
+  <span class="label">Bootstrap Year 1</span>
+  <h1 class="section-h1">The Lean Plan</h1>
+
+  <div class="summary-box">
+    <div style="font-size:11px; letter-spacing:2px; color:#888;">YEAR 1 LEAN BUDGET</div>
+    <div class="stat">$53,000</div>
+    <div style="font-size:12px; color:#666;">Same 3 pilot retreats, same 15-18 veterans served. Just bootstrapped.</div>
+  </div>
+
+  <h2 class="section-h2">How We Get to $53,000</h2>
+  <table>
+    <thead>
+      <tr><th>Strategy</th><th class="right">Savings</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Founder serves as unpaid volunteer Year 1</td><td class="right">−$30,000</td></tr>
+      <tr><td>Activity partnerships (Operation Surf, donated guides, etc.)</td><td class="right">−$4,500</td></tr>
+      <tr><td>Volunteer veteran peer facilitators (vs paid)</td><td class="right">−$4,500</td></tr>
+      <tr><td>Free software stack (TechSoup, Mailchimp, Wave, Notion)</td><td class="right">−$600</td></tr>
+      <tr><td>Phone-shot photography (no $1,500 photo hire)</td><td class="right">−$1,500</td></tr>
+      <tr><td>Borrowed donor event venues</td><td class="right">−$1,000</td></tr>
+      <tr><td>Digital-only marketing materials Year 1</td><td class="right">−$500</td></tr>
+      <tr class="total-row"><td>TOTAL SAVINGS vs. standard budget</td><td class="right">−$46,000</td></tr>
+    </tbody>
+  </table>
+
+  <h2 class="section-h2">Year 1 Lean Budget Summary</h2>
+  <table>
+    <thead>
+      <tr><th>Category</th><th class="right">Amount</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Startup & Legal Costs</td><td class="right">$3,990</td></tr>
+      <tr><td>Insurance & Compliance (don't skip)</td><td class="right">$4,800</td></tr>
+      <tr><td>3 Pilot Retreats (with partnerships)</td><td class="right">$28,800</td></tr>
+      <tr><td>Operations & Admin (no founder stipend)</td><td class="right">$2,300</td></tr>
+      <tr><td>Marketing & Development (lean)</td><td class="right">$2,000</td></tr>
+      <tr><td>Contingency (20% — extra buffer for lean ops)</td><td class="right">$8,378</td></tr>
+      <tr class="total-row"><td>TOTAL</td><td class="right">$50,268</td></tr>
+    </tbody>
+  </table>
+
+  <p style="font-style:italic; color:var(--gray);">Round number: <b>$53,000</b> to allow for under-budgeted items and surprises.</p>
+
+  <div class="footer">TURNING THE TIDES &nbsp;•&nbsp; LEAN BUDGET &nbsp;•&nbsp; PAGE 1</div>
+</div>
+
+<!-- PAGE 3: PER RETREAT -->
+<div class="page">
+  <span class="label">Lean Retreat Cost</span>
+  <h1 class="section-h1">Lean Per-Retreat Cost</h1>
+
+  <p>Same 7-14 day retreat for ~6 veterans. Reduced by leveraging veteran service partnerships and volunteer facilitators.</p>
+
+  <table>
+    <thead><tr><th>Line Item</th><th class="right">Standard</th><th class="right">Lean</th></tr></thead>
+    <tbody>
+      <tr><td>Round-trip flights to Maui</td><td class="right">$4,200</td><td class="right">$4,200</td></tr>
+      <tr><td>Ground transport on Maui</td><td class="right">$500</td><td class="right">$300 <span class="savings-pill">PARTNER</span></td></tr>
+      <tr><td>Lodging — donated</td><td class="right">$0</td><td class="right">$0</td></tr>
+      <tr><td>Groceries & meals</td><td class="right">$2,100</td><td class="right">$1,800 <span class="savings-pill">DONATIONS</span></td></tr>
+      <tr><td>Surf instruction</td><td class="right">$900</td><td class="right">$0 <span class="savings-pill">OP. SURF</span></td></tr>
+      <tr><td>Snorkel rental & guides</td><td class="right">$400</td><td class="right">$200 <span class="savings-pill">PARTNER</span></td></tr>
+      <tr><td>Hiking transport & permits</td><td class="right">$300</td><td class="right">$300</td></tr>
+      <tr><td>Cultural practitioner stipends</td><td class="right">$500</td><td class="right">$300 <span class="savings-pill">PARTNER</span></td></tr>
+      <tr><td>Park fees & permits</td><td class="right">$200</td><td class="right">$200</td></tr>
+      <tr><td>Facilitator stipend</td><td class="right">$2,000</td><td class="right">$500 <span class="savings-pill">VOLUNTEER</span></td></tr>
+      <tr><td>Local helpers / volunteers</td><td class="right">$500</td><td class="right">$300</td></tr>
+      <tr><td>Farm supplies & gear</td><td class="right">$300</td><td class="right">$300</td></tr>
+      <tr><td>First aid / safety equipment</td><td class="right">$200</td><td class="right">$200</td></tr>
+      <tr><td>Per-retreat contingency</td><td class="right">$500</td><td class="right">$1,000</td></tr>
+      <tr class="subtotal-row"><td>COST PER RETREAT</td><td class="right">$12,600</td><td class="right">$9,600</td></tr>
+    </tbody>
+  </table>
+
+  <p style="font-style:italic; color:var(--gray);">$3,000 saved per retreat through partnerships. 3 retreats × $9,600 = $28,800 Year 1.</p>
+
+  <h2 class="section-h2">Key Partnerships to Pursue Year 1</h2>
+  <ul style="font-size:13px; line-height:1.8; padding-left:20px;">
+    <li><b>Operation Surf</b> — free surf therapy for veterans nationwide</li>
+    <li><b>Wounded Warrior</b> Hawaii outdoor programs</li>
+    <li><b>Local Maui veterans organizations</b> for volunteer facilitators</li>
+    <li><b>Hawaiian cultural practitioners</b> who donate time for veteran healing</li>
+    <li><b>Local restaurants / churches</b> for donated meals during retreats</li>
+    <li><b>Maui rideshare / drivers</b> who volunteer ground transport</li>
+  </ul>
+
+  <div class="footer">TURNING THE TIDES &nbsp;•&nbsp; LEAN BUDGET &nbsp;•&nbsp; PAGE 2</div>
+</div>
+
+<!-- PAGE 4: WHY LEAN -->
+<div class="page">
+  <span class="label">The Strategic Case</span>
+  <h1 class="section-h1">Why Bootstrap Year 1?</h1>
+
+  <p>The lean budget isn't the long-term plan. Years 2 and beyond, the founder gets paid, infrastructure gets built, and the budget grows. But Year 1 is about <b>proof</b> — showing that the program works before asking for big money.</p>
+
+  <h2 class="section-h2">Three reasons this matters:</h2>
+
+  <h3 style="font-size:16px; color:var(--olive); margin-top:18px;">1. Easier to raise</h3>
+  <p>Funders are far more willing to give $5,000 to a $53k pilot than a $99k plan with founder salary. Lean budgets are <b>credible</b>.</p>
+
+  <h3 style="font-size:16px; color:var(--olive); margin-top:18px;">2. Stronger pitch to donors</h3>
+  <p>The line <i>"Founder serves as an unpaid volunteer in Year 1 — 100% of donations reach veterans directly"</i> wins donations. Foundations love it. Individual donors love it. Grant officers love it.</p>
+
+  <h3 style="font-size:16px; color:var(--olive); margin-top:18px;">3. Faster path to launch</h3>
+  <p>$53,000 is a number you can hit through a single major grant + crowdfunding + community fundraising. $99,000 takes longer to assemble. Faster funding = faster veterans served.</p>
+
+  <h2 class="section-h2">When Founder Compensation Begins</h2>
+  <p>Founder salary is <b>deferred</b> to Year 2 — or earlier if Year 1 funding exceeds <b>$90,000</b>. This is documented in the bylaws and shared with all funders so there are no surprises.</p>
+
+  <h2 class="section-h2">After Year 1</h2>
+  <p>Once the pilot is complete, the standard budget kicks in. Year 2 includes founder compensation, paid facilitators, and proper marketing budget. The lean year is a one-time bootstrap — not the operating model.</p>
+
+  <div class="footer">TURNING THE TIDES &nbsp;•&nbsp; LEAN BUDGET &nbsp;•&nbsp; PAGE 3</div>
+</div>
+
+<!-- CLOSING -->
+<div class="page cover">
+  <div class="badge">Get In Touch</div>
+  <h1 style="font-size:48px;">100%<br>OF DONATIONS<br>REACH <span>VETERANS</span></h1>
+  <div class="gold-line"></div>
+  <p style="text-align:center; max-width:5in; color:#a0b8c0; font-size:16px; margin-top:24px;">
+    A founder who works unpaid. Partners who donate services. A clear plan to bring the first 18 combat veterans home to Maui.
+  </p>
+  <div style="margin-top:40px; text-align:center; line-height:2; color:white;">
+    <div style="color:var(--gold); font-family:'Oswald',sans-serif; font-size:22px; letter-spacing:3px;">JOHN COLLINS</div>
+    <div style="font-size:13px; color:#a0b8c0;">FOUNDER, TURNING THE TIDES</div>
+    <div style="margin-top:24px; font-size:16px;">📞 (615) 739-3008</div>
+    <div style="font-size:16px;">✉ spc2233@hotmail.com</div>
+  </div>
+  <div class="meta" style="margin-top:auto;">
+    Turning the Tides &nbsp;•&nbsp; A 501(c)(3) Nonprofit in Formation<br>
+    Maui, Hawaii
+  </div>
+</div>
+
+</body>
+</html>
