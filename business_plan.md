@@ -10,7 +10,7 @@
 
 ## 1. EXECUTIVE SUMMARY
 
-Turning the Tides is a 501(c)(3) nonprofit retreat program serving combat veterans living with PTSD. Our retreats — set on private farmland on the island of Maui, Hawaii — combine three evidence-backed therapeutic pillars: meaningful agricultural work, outdoor ocean and land activities, and small-cohort peer community.
+Turning the Tides is a 501(c)(3) nonprofit retreat program serving combat veterans living with PTSD. Our retreats — set on private farmland on the island of Maui, Hawaii — combine three evidence-backed therapeutic pillars: meaningful agricultural work, outdoor ocean and land activities, and small-group peer community.
 
 Founded by John Collins, a U.S. Army infantryman who served two combat tours in Baghdad (2008 and 2010), Turning the Tides exists because of what helped him heal: not clinical settings, but other veterans, real work, and a place that felt like home. Our program is built to give that experience to others.
 
@@ -67,7 +67,7 @@ Repeated research and personal accounts (including the founder's own) point to:
 
 ## 4. THE SOLUTION: PROGRAM OVERVIEW
 
-Turning the Tides operates 7-14 day immersive retreats for cohorts of 4-8 combat veterans at a time. The program rests on three pillars:
+Turning the Tides operates 7-14 day immersive retreats for groups of 4-8 combat veterans at a time. The program rests on three pillars:
 
 ### Pillar One — Farm & Land Work
 Hands-on agricultural therapy partnering with local Maui farmers and agricultural cooperatives. Veterans participate in:
@@ -90,7 +90,7 @@ Veterans engage with Maui's natural environment through:
 **Therapeutic basis:** Physical activity in natural environments — particularly water-based activities — is shown to reduce hyperarousal and quiet the autonomic nervous system.
 
 ### Pillar Three — Community & Connection
-Small cohorts of 4-8 veterans rebuild social connection and trust:
+Small groups of 4-8 veterans rebuild social connection and trust:
 - Shared meals every day
 - Optional evening fire circles for peer-led discussion
 - One-on-one mentorship with veterans further along in healing
@@ -123,7 +123,7 @@ Turning the Tides is built directly from that experience. The program isn't theo
 - **Duration:** 7-14 days per retreat
 - **Frequency Year 1:** 2-3 retreats
 - **Frequency Year 3+:** 6-8 retreats annually
-- **Cohort size:** 4-8 veterans
+- **Group size:** 4-8 veterans
 - **Daily rhythm:** Morning farm work → midday meal → afternoon outdoor activity or rest → evening shared meal and optional discussion
 
 ### Staffing (initial phase)
@@ -299,7 +299,7 @@ Mental health practitioners, veteran service organization leaders, agricultural 
 
 ### Months 4-6 (Foundation)
 - Apply for first 3 grants
-- Recruit first cohort of veterans
+- Recruit first group of veterans
 - Lock in local partnerships (farm, surf, transport)
 - Develop intake/screening process
 - Hire/contract first facilitator
@@ -335,7 +335,7 @@ Mental health practitioners, veteran service organization leaders, agricultural 
 |-----------------|-------------------|
 | Clinical setting | Working farm in Maui |
 | Run by therapists | Run by a combat veteran |
-| Individual therapy | Peer cohort + activities |
+| Individual therapy | Peer group + activities |
 | Pharma-first | Nature, work, community first |
 | Generic veterans | Combat veterans specifically |
 | Costs $$$ to attend | Always free for veterans |
