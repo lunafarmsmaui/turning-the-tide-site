@@ -794,30 +794,26 @@
 </section>
 <div class="toast" id="volunteerToast">Thanks for volunteering! We'll reach out soon.</div>
 
-<!-- ── DONATE ─────────────────────────────────────────────────── -->
+<!-- ── SUPPORT ────────────────────────────────────────────────── -->
 <section id="donate">
   <div class="section-inner">
     <div class="section-label">Support the Mission</div>
     <h2 class="section-title">Help Fund a Veteran's Retreat</h2>
     <div class="section-line" style="margin:0 auto 24px;"></div>
     <p class="section-text">
-      Every dollar goes directly toward bringing a veteran to Maui for a life-changing experience. Turning the Tides is a 501(c)(3) nonprofit — your donation is tax deductible.
+      Turning the Tides is in formation as a Hawaii nonprofit. We're not yet set up to accept public donations through the website — but we'd love to hear from you.
     </p>
-    <div class="donate-options" style="margin-top:36px;">
-      <button class="donate-btn" onclick="setAmount(this, 25)">$25</button>
-      <button class="donate-btn" onclick="setAmount(this, 50)">$50</button>
-      <button class="donate-btn" onclick="setAmount(this, 100)">$100</button>
-      <button class="donate-btn" onclick="setAmount(this, 250)">$250</button>
-      <button class="donate-btn" onclick="setAmount(this, 500)">$500</button>
-    </div>
-    <a href="https://venmo.com/john-collins-34" target="_blank">
+    <p class="section-text" style="margin-top:18px;">
+      If you feel called to support the mission — whether that's a personal gift, a corporate sponsorship, an in-kind donation, or just a conversation — reach out directly.
+    </p>
+    <a href="mailto:turningthetidesmaui@gmail.com?subject=Supporting%20Turning%20the%20Tides" style="display:inline-block; margin-top:32px;">
       <div class="venmo-box">
-        <span style="font-size:24px;">💙</span>
-        <span>Donate via Venmo &nbsp;@john-collins-34</span>
+        <span style="font-size:24px;">✉️</span>
+        <span>Email us about supporting</span>
       </div>
     </a>
     <p style="margin-top:20px; font-size:13px; color:rgba(255,255,255,0.6);">
-      More payment options coming soon. To donate by check or for other arrangements, contact us directly.
+      Online giving will open soon — once our 501(c)(3) status is confirmed, all donations will be tax-deductible.
     </p>
   </div>
 </section>
@@ -1022,11 +1018,6 @@
     });
   }
 
-  function setAmount(btn, amount) {
-    document.querySelectorAll('.donate-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    window.open('https://venmo.com/john-collins-34?txn=pay&amount=' + amount, '_blank');
-  }
 
   // Fade in sections on scroll
   const observer = new IntersectionObserver((entries) => {
@@ -1071,7 +1062,6 @@
       <ul style="color:#c0d4cc; line-height:1.55; padding-left:20px; font-size:13px;">
         <li>Plant, harvest, and maintain crops with local farmers</li>
         <li>Traditional Hawaiian agriculture (kalo, ulu, sugarcane)</li>
-        <li>Care for livestock — chickens, goats, bees</li>
         <li>Build/repair garden beds, irrigation, infrastructure</li>
         <li>Cook and share meals from food you grew</li>
         <li>Learn sustainable farming and permaculture</li>
