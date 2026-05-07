@@ -21,13 +21,39 @@
 
     * { margin:0; padding:0; box-sizing:border-box; }
 
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; scroll-padding-top: 160px; }
 
     body {
       font-family: 'Open Sans', sans-serif;
       background: var(--navy);
       color: var(--white);
+      position: relative;
     }
+
+    /* Topographic background overlay — DISABLED 2026-05-06 evening, paused mid-iteration */
+    /* User didn't like the tiled look. Files preserved: topo-bg.png, topo-bg-v2.png, topo-bg-transparent.png */
+    /* Re-enable by un-commenting and pick a non-tiled approach (section accent, divider, or feature block) */
+    /*
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: 50;
+      pointer-events: none;
+      opacity: 0.18;
+      background-image: url('topo-bg.png');
+      background-size: 700px 700px;
+      background-repeat: repeat;
+      filter: invert(1) sepia(1) saturate(4) hue-rotate(355deg) brightness(0.95);
+      mix-blend-mode: screen;
+    }
+    */
+
+    /* Keep nav above the topo overlay so it stays solid */
+    nav { z-index: 100; }
+
+    /* Photos sit above the topo so lines don't cross them */
+    img { position: relative; z-index: 60; }
 
     h1, h2, h3, h4 { font-family: 'Oswald', sans-serif; letter-spacing: 1px; }
 
@@ -40,13 +66,25 @@
       border-bottom: 2px solid var(--gold);
       display: flex; justify-content: space-between; align-items: center;
       padding: 14px 40px;
+      transition: transform 0.3s ease;
     }
+    nav.nav-hidden { transform: translateY(-100%); }
 
     .nav-logo {
       font-family: 'Oswald', sans-serif;
-      font-size: 22px; font-weight: 700;
+      font-size: 34px; font-weight: 700;
       color: var(--gold);
       letter-spacing: 2px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-logo img {
+      height: 120px;
+      width: 120px;
+      flex-shrink: 0;
+      filter: brightness(0) saturate(100%) invert(70%) sepia(75%) saturate(380%) hue-rotate(2deg) brightness(92%) contrast(100%);
     }
 
     .nav-links { display: flex; gap: 30px; }
@@ -65,7 +103,7 @@
       display: flex; flex-direction: column;
       justify-content: center; align-items: center;
       text-align: center;
-      padding: 120px 40px 80px;
+      padding: 160px 40px 80px;
       position: relative;
       overflow: hidden;
       background: linear-gradient(160deg, rgba(10,22,40,0.85) 0%, rgba(13,45,58,0.75) 50%, rgba(10,30,16,0.85) 100%), url('oceanpic.jpg') center/cover no-repeat;
@@ -79,6 +117,7 @@
         linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
         linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
       background-size: 60px 60px;
+      pointer-events: none;
     }
 
     .hero-badge {
@@ -482,7 +521,10 @@
 
 <!-- ── NAV ──────────────────────────────────────────────────── -->
 <nav>
-  <div class="nav-logo">TURNING THE TIDES</div>
+  <div class="nav-logo">
+    <img src="logo-icon-transparent.png" alt="Turning the Tides logo">
+    <span>TURNING THE TIDES</span>
+  </div>
   <div class="nav-links">
     <a href="#mission">Mission</a>
     <a href="#founder">Our Story</a>
@@ -1018,6 +1060,21 @@
     });
   }
 
+
+  // Auto-hide nav on scroll down, reveal on scroll up
+  (function() {
+    const nav = document.querySelector('nav');
+    let lastY = window.scrollY;
+    window.addEventListener('scroll', () => {
+      const y = window.scrollY;
+      if (y > lastY && y > 120) {
+        nav.classList.add('nav-hidden');
+      } else {
+        nav.classList.remove('nav-hidden');
+      }
+      lastY = y;
+    }, { passive: true });
+  })();
 
   // Fade in sections on scroll
   const observer = new IntersectionObserver((entries) => {
