@@ -51,6 +51,130 @@
     /* Photos sit above the topo so lines don't cross them */
     img { position: relative !important; z-index: 60 !important; }
 
+    /* Gallery grid */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 32px;
+    }
+    .gallery-grid img {
+      width: 100%;
+      border-radius: 2px;
+      object-fit: cover;
+      aspect-ratio: 4/3;
+    }
+    @media (max-width: 700px) {
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    }
+    @media (max-width: 420px) {
+      .gallery-grid { grid-template-columns: 1fr; }
+    }
+
+    /* Gallery photos: hover lift + click-to-expand */
+    .gallery-photo {
+      cursor: pointer;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .gallery-photo:hover {
+      transform: scale(1.04);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      z-index: 70 !important;
+    }
+
+    /* Lightbox overlay */
+    #lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.92);
+      z-index: 99998;
+      justify-content: center;
+      align-items: center;
+      padding: 30px;
+      cursor: zoom-out;
+    }
+    #lightbox.open { display: flex; }
+    #lightbox img {
+      max-width: 95vw;
+      max-height: 90vh;
+      object-fit: contain;
+      border-radius: 4px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.7);
+    }
+    #lightbox-close {
+      position: absolute;
+      top: 18px; right: 24px;
+      background: transparent;
+      border: none;
+      color: var(--gold);
+      font-size: 36px;
+      cursor: pointer;
+      line-height: 1;
+      padding: 0 8px;
+    }
+
+    /* Partners block above footer */
+    .partners {
+      background: rgba(10,22,40,0.85);
+      border-top: 1px solid rgba(201,168,76,0.2);
+      padding: 36px 40px;
+      text-align: center;
+      position: relative;
+      z-index: 60;
+    }
+    .partners-label {
+      font-family: 'Oswald', sans-serif;
+      font-size: 11px;
+      letter-spacing: 4px;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .partners-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+    .partner-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+    .partner-card img {
+      max-height: 90px;
+      width: auto;
+      opacity: 0.95;
+      border-radius: 4px;
+    }
+    .partner-name {
+      font-family: 'Oswald', sans-serif;
+      font-size: 13px;
+      color: var(--light);
+      letter-spacing: 1.5px;
+    }
+    .partner-placeholder {
+      width: 80px; height: 60px;
+      border: 1px dashed rgba(201,168,76,0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(201,168,76,0.5);
+      font-size: 10px;
+      letter-spacing: 1px;
+    }
+
+    /* Gallery & partners — phone-friendly */
+    @media (max-width: 700px) {
+      #lightbox { padding: 12px; }
+      #lightbox-close { top: 8px; right: 12px; font-size: 32px; }
+      .partner-card img { max-height: 70px; }
+      .partners { padding: 28px 20px; }
+    }
+
     h1, h2, h3, h4 { font-family: 'Oswald', sans-serif; letter-spacing: 1px; }
 
     a { color: inherit; text-decoration: none; }
@@ -674,13 +798,13 @@
     <h2 class="section-title">Life at the Retreat</h2>
     <div class="section-line"></div>
     <!-- TO ADD PHOTOS: replace each photo-placeholder div with an img tag -->
-    <div style="display:grid; grid-template-columns: repeat(3,1fr); gap:16px; margin-top:32px;">
-      <img src="propertypic2.jpg" alt="Retreat property" style="width:100%; border-radius:2px; object-fit:cover; aspect-ratio:4/3;">
-      <img src="propertypic3.jpg" alt="Retreat property" style="width:100%; border-radius:2px; object-fit:cover; aspect-ratio:4/3;">
-      <img src="propertypic4.jpg" alt="Retreat property" style="width:100%; border-radius:2px; object-fit:cover; aspect-ratio:4/3;">
-      <img src="new background.jpg" alt="Maui retreat" style="width:100%; border-radius:2px; object-fit:cover; aspect-ratio:4/3;">
-      <img src="oceanpic3.jpg" alt="Maui ocean" style="width:100%; border-radius:2px; object-fit:cover; aspect-ratio:4/3;">
-      <img src="beachpic 4.jpg" alt="Maui beach" style="width:100%; border-radius:2px; object-fit:cover; aspect-ratio:4/3;">
+    <div class="gallery-grid">
+      <img class="gallery-photo" src="propertypic2.jpg" alt="Retreat property">
+      <img class="gallery-photo" src="propertypic3.jpg" alt="Retreat property">
+      <img class="gallery-photo" src="propertypic4.jpg" alt="Retreat property">
+      <img class="gallery-photo" src="new background.jpg" alt="Maui retreat">
+      <img class="gallery-photo" src="oceanpic3.jpg" alt="Maui ocean">
+      <img class="gallery-photo" src="beachpic 4.jpg" alt="Maui beach">
     </div>
   </div>
 </section>
@@ -995,11 +1119,27 @@
 </section>
 
 <!-- ── FOOTER ─────────────────────────────────────────────────── -->
+<!-- ── PARTNERS ───────────────────────────────────────────────── -->
+<div class="partners">
+  <div class="partners-label">In Partnership With</div>
+  <div class="partners-row">
+    <div class="partner-card">
+      <img src="luna-farms-logo.jpg" alt="Luna Farms — Maui, HI">
+    </div>
+  </div>
+</div>
+
 <footer>
   <div class="footer-logo">TURNING THE TIDES</div>
   <div class="footer-text">Maui, Hawaii &nbsp;|&nbsp; A 501(c)(3) Nonprofit Organization</div>
   <div class="footer-text">© 2025 Turning the Tides. All rights reserved.</div>
 </footer>
+
+<!-- Lightbox for gallery photos -->
+<div id="lightbox" onclick="if(event.target.id==='lightbox' || event.target.id==='lightbox-close') closeLightbox()">
+  <button id="lightbox-close" onclick="closeLightbox()" aria-label="Close">×</button>
+  <img id="lightbox-img" src="" alt="">
+</div>
 
 <script>
   function openProgramModal(which) {
@@ -1066,6 +1206,26 @@
     });
   }
 
+
+  // Gallery lightbox
+  function openLightbox(src, alt) {
+    const lb = document.getElementById('lightbox');
+    const img = document.getElementById('lightbox-img');
+    img.src = src;
+    img.alt = alt || '';
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.querySelectorAll('.gallery-photo').forEach(img => {
+    img.addEventListener('click', () => openLightbox(img.src, img.alt));
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeLightbox();
+  });
 
   // Auto-hide nav on scroll down, reveal on scroll up
   (function() {
