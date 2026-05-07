@@ -82,6 +82,16 @@
       z-index: 70 !important;
     }
 
+    /* Volunteer cards: subtle hover lift */
+    .volunteer-card {
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-left-color 0.25s ease;
+    }
+    .volunteer-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+      border-left-color: var(--gold) !important;
+    }
+
     /* Lightbox overlay */
     #lightbox {
       display: none;
@@ -892,7 +902,7 @@
       Money isn't the only way to help. We need volunteers — especially on Maui — for everything from farm work to cooking, transportation, and just being a friendly face. Veterans and civilians both welcome.
     </p>
     <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:20px; margin-top:36px; margin-bottom:40px;">
-      <div style="background:rgba(10,22,40,0.85); border-left:3px solid var(--olive2); padding:20px; position:relative; z-index:60;">
+      <div class="volunteer-card" style="background:rgba(10,22,40,0.85); border-left:3px solid var(--olive2); padding:20px; position:relative; z-index:60;">
         <div style="display:flex; align-items:center; gap:10px; font-family:'Oswald',sans-serif; font-size:18px; color:white; margin-bottom:6px;">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
             <path d="M7 20H17"/><path d="M12 20V9"/>
@@ -903,7 +913,7 @@
         </div>
         <div style="font-size:14px; color:#8a9eb0; line-height:1.6;">Help with planting, harvesting, and maintaining the property.</div>
       </div>
-      <div style="background:rgba(10,22,40,0.85); border-left:3px solid var(--olive2); padding:20px; position:relative; z-index:60;">
+      <div class="volunteer-card" style="background:rgba(10,22,40,0.85); border-left:3px solid var(--olive2); padding:20px; position:relative; z-index:60;">
         <div style="display:flex; align-items:center; gap:10px; font-family:'Oswald',sans-serif; font-size:18px; color:white; margin-bottom:6px;">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
             <path d="M4 8C4 4 7 3 12 3C17 3 20 4 20 8"/>
@@ -916,7 +926,7 @@
         </div>
         <div style="font-size:14px; color:#8a9eb0; line-height:1.6;">Cook, serve meals, or help host veterans during their stay.</div>
       </div>
-      <div style="background:rgba(10,22,40,0.85); border-left:3px solid var(--olive2); padding:20px; position:relative; z-index:60;">
+      <div class="volunteer-card" style="background:rgba(10,22,40,0.85); border-left:3px solid var(--olive2); padding:20px; position:relative; z-index:60;">
         <div style="display:flex; align-items:center; gap:10px; font-family:'Oswald',sans-serif; font-size:18px; color:white; margin-bottom:6px;">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
             <path d="M3 17H1V12L3 8H15V17H10"/>
@@ -928,7 +938,7 @@
         </div>
         <div style="font-size:14px; color:#8a9eb0; line-height:1.6;">Pick up arriving veterans from the airport or local errands.</div>
       </div>
-      <div style="background:rgba(10,22,40,0.85); border-left:3px solid var(--olive2); padding:20px; position:relative; z-index:60;">
+      <div class="volunteer-card" style="background:rgba(10,22,40,0.85); border-left:3px solid var(--olive2); padding:20px; position:relative; z-index:60;">
         <div style="display:flex; align-items:center; gap:10px; font-family:'Oswald',sans-serif; font-size:18px; color:white; margin-bottom:6px;">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
             <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
@@ -1305,7 +1315,7 @@
       </svg>
       <div style="font-family:'Oswald',sans-serif; color:#c9a84c; font-size:11px; letter-spacing:2.5px; margin-top:6px;">PILLAR TWO</div>
       <h2 style="font-family:'Oswald',sans-serif; font-size:26px; margin:4px 0 14px;">Outdoor & Ocean Activities</h2>
-      <img src="outdoor activities.jpg" alt="Outdoor activities on Maui" style="float:right; width:200px; height:160px; object-fit:cover; border-radius:6px; margin:4px 0 12px 18px;">
+      <img src="outdoor activities.jpg" alt="Outdoor activities on Maui" style="float:right; width:200px; height:160px; object-fit:cover; border-radius:6px; margin:50px 0 12px 18px;">
       <p style="color:#c0d4cc; line-height:1.55; margin-bottom:12px; font-size:14px;">
         Maui's ocean and mountains are part of the program — physical activity in nature is one of the most effective tools for managing combat PTSD.
       </p>
