@@ -241,13 +241,16 @@
     /* ── NAV ──────────────────────────────────────────────── */
     nav {
       position: fixed; top: 0; width: 100%; z-index: 100;
-      background: rgba(10,22,40,0.95);
-      border-bottom: 2px solid var(--gold);
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 14px 40px;
-      transition: transform 0.3s ease;
+      background: transparent;
+      display: flex; justify-content: center; align-items: center;
+      gap: 32px;
+      padding: 4px 40px;
+      transition: transform 0.3s ease, opacity 0.3s ease;
     }
-    nav.nav-hidden { transform: translateY(-100%); }
+    .nav-logo {
+      flex-shrink: 0;
+    }
+    nav.nav-hidden { transform: translateY(-100%); opacity: 0; pointer-events: none; }
 
     .nav-logo {
       font-family: 'Oswald', sans-serif;
@@ -256,13 +259,13 @@
       letter-spacing: 2px;
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 2px;
       flex-shrink: 0;
     }
 
     .nav-logo img {
-      height: 120px;
-      width: 120px;
+      height: 176px;
+      width: 176px;
       flex-shrink: 0;
       object-fit: contain;
       filter: brightness(0) saturate(100%) invert(70%) sepia(75%) saturate(380%) hue-rotate(2deg) brightness(92%) contrast(100%);
@@ -286,7 +289,7 @@
     .nav-links { display: flex; gap: 30px; }
 
     .nav-links a {
-      font-size: 13px; font-weight: 600;
+      font-size: 15px; font-weight: 600;
       letter-spacing: 1.5px; text-transform: uppercase;
       color: var(--light); transition: color 0.2s;
     }
@@ -299,7 +302,7 @@
       display: flex; flex-direction: column;
       justify-content: flex-start; align-items: center;
       text-align: center;
-      padding: 180px 40px 80px;
+      padding: 210px 40px 80px;
       position: relative;
       overflow: hidden;
       background: linear-gradient(160deg, rgba(10,22,40,0.85) 0%, rgba(13,45,58,0.75) 50%, rgba(10,30,16,0.85) 100%), url('oceanpic.jpg') center/cover no-repeat;
@@ -323,9 +326,25 @@
       line-height: 1.05;
       color: var(--white);
       text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+      text-transform: uppercase;
     }
 
     .hero-title span { color: var(--gold); }
+
+    .hero-logo {
+      max-width: 460px;
+      width: 80%;
+      height: auto;
+      margin: 12px 0;
+      filter: brightness(0) saturate(100%) invert(70%) sepia(75%) saturate(380%) hue-rotate(2deg) brightness(92%) contrast(100%);
+    }
+    .visually-hidden {
+      position: absolute !important;
+      width: 1px; height: 1px;
+      padding: 0; margin: -1px;
+      overflow: hidden; clip: rect(0,0,0,0);
+      white-space: nowrap; border: 0;
+    }
 
     .hero-tagline {
       margin-top: 20px;
@@ -661,14 +680,14 @@
     footer {
       background: #060f1a;
       border-top: 1px solid rgba(201,168,76,0.2);
-      padding: 28px 40px;
+      padding: 8px 40px;
       display: flex; justify-content: space-between; align-items: center;
       flex-wrap: wrap; gap: 24px;
     }
 
     .footer-icon {
-      height: 120px;
-      width: 120px;
+      height: 162px;
+      width: 162px;
       flex-shrink: 0;
       filter: brightness(0) saturate(100%) invert(70%) sepia(75%) saturate(380%) hue-rotate(2deg) brightness(92%) contrast(100%);
     }
@@ -707,12 +726,12 @@
       text-transform: uppercase;
     }
     .footer-supporter img {
-      height: 80px;
+      height: 64px;
       width: auto;
     }
 
     @media (max-width: 700px) {
-      .footer-icon { height: 70px; width: 70px; }
+      .footer-icon { height: 120px; width: 120px; }
       .footer-supporter img { height: 60px; }
       .footer-supporters { gap: 12px; }
     }
@@ -754,8 +773,7 @@
 <!-- ── NAV ──────────────────────────────────────────────────── -->
 <nav>
   <div class="nav-logo">
-    <img src="logo-icon-transparent.png" alt="Turning the Tides logo">
-    <span>TURNING THE TIDES</span>
+    <img src="turning-the-tides-logo-with-text-transparent.png" alt="Turning the Tides logo">
   </div>
   <div class="nav-links">
     <a href="#mission">Mission</a>
@@ -1218,7 +1236,7 @@
 </section>
 
 <footer>
-  <img class="footer-icon" src="logo-icon-transparent.png" alt="Turning the Tides">
+  <img class="footer-icon" src="turning-the-tides-logo-with-text-transparent.png" alt="Turning the Tides">
   <div class="footer-text-block">
     <div class="footer-logo">TURNING THE TIDES</div>
     <div class="footer-text">Maui, Hawaii &nbsp;|&nbsp; A 501(c)(3) Nonprofit Organization</div>
@@ -1227,9 +1245,6 @@
   <div class="footer-supporters">
     <div class="footer-supporter">
       <img src="luna-farms-logo.jpg" alt="Luna Farms">
-    </div>
-    <div class="footer-supporter">
-      <img src="castelle-studio-logo.jpg" alt="Castelle Studio">
     </div>
   </div>
 </footer>
@@ -1326,18 +1341,15 @@
     if (e.key === 'Escape') closeLightbox();
   });
 
-  // Auto-hide nav on scroll down, reveal on scroll up
+  // Hide nav whenever page is scrolled, show only when near the top
   (function() {
     const nav = document.querySelector('nav');
-    let lastY = window.scrollY;
     window.addEventListener('scroll', () => {
-      const y = window.scrollY;
-      if (y > lastY && y > 120) {
+      if (window.scrollY > 80) {
         nav.classList.add('nav-hidden');
       } else {
         nav.classList.remove('nav-hidden');
       }
-      lastY = y;
     }, { passive: true });
   })();
 
@@ -1381,7 +1393,7 @@
       <h4 style="font-family:'Oswald',sans-serif; color:#c9a84c; margin:14px 0 6px; font-size:12px; letter-spacing:1.5px;">WHAT YOU'LL DO</h4>
       <ul style="color:#c0d4cc; line-height:1.55; padding-left:20px; font-size:13px;">
         <li>Plant, harvest, and maintain crops with local farmers</li>
-        <li>Traditional Hawaiian agriculture (kalo, ulu, sugarcane)</li>
+        <li>Work the fields at a local pepper farm</li>
         <li>Build/repair garden beds, irrigation, infrastructure</li>
         <li>Cook and share meals from food you grew</li>
         <li>Learn sustainable farming and permaculture</li>
