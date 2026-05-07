@@ -177,6 +177,43 @@
       letter-spacing: 1px;
     }
 
+    /* Sponsors block — navy bg with gold letters (flipped) */
+    .sponsors {
+      background: var(--navy);
+      border-top: 1px solid rgba(201,168,76,0.2);
+      padding: 28px 40px;
+      text-align: center;
+      position: relative;
+      z-index: 60;
+    }
+    .sponsors-label {
+      font-family: 'Oswald', sans-serif;
+      font-size: 11px;
+      letter-spacing: 4px;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .sponsors-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+    .sponsor-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: white;
+      padding: 8px 14px;
+      border-radius: 4px;
+    }
+    .sponsor-card img {
+      max-height: 70px;
+      width: auto;
+    }
+
     /* Gallery & partners — phone-friendly */
     @media (max-width: 700px) {
       #lightbox { padding: 12px; }
@@ -624,9 +661,21 @@
     footer {
       background: #060f1a;
       border-top: 1px solid rgba(201,168,76,0.2);
-      padding: 32px 40px;
+      padding: 28px 40px;
       display: flex; justify-content: space-between; align-items: center;
-      flex-wrap: wrap; gap: 16px;
+      flex-wrap: wrap; gap: 24px;
+    }
+
+    .footer-icon {
+      height: 120px;
+      width: 120px;
+      flex-shrink: 0;
+      filter: brightness(0) saturate(100%) invert(70%) sepia(75%) saturate(380%) hue-rotate(2deg) brightness(92%) contrast(100%);
+    }
+
+    .footer-text-block {
+      flex: 1;
+      text-align: center;
     }
 
     .footer-logo {
@@ -637,6 +686,35 @@
 
     .footer-text {
       font-size: 13px; color: var(--gray);
+    }
+
+    .footer-supporters {
+      display: flex;
+      gap: 18px;
+      flex-shrink: 0;
+    }
+    .footer-supporter {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+    .footer-supporter-label {
+      font-family: 'Oswald', sans-serif;
+      font-size: 9px;
+      letter-spacing: 2px;
+      color: var(--gray);
+      text-transform: uppercase;
+    }
+    .footer-supporter img {
+      height: 80px;
+      width: auto;
+    }
+
+    @media (max-width: 700px) {
+      .footer-icon { height: 70px; width: 70px; }
+      .footer-supporter img { height: 60px; }
+      .footer-supporters { gap: 12px; }
     }
 
     /* ── TOAST ────────────────────────────────────────────── */
@@ -1127,15 +1205,6 @@
 </section>
 <div class="toast" id="newsletterToast">Subscribed! Thanks for joining the mission.</div>
 
-<!-- ── PARTNERS ───────────────────────────────────────────────── -->
-<div class="partners">
-  <div class="partners-label">In Partnership With</div>
-  <div class="partners-row">
-    <div class="partner-card">
-      <img src="luna-farms-logo.jpg" alt="Luna Farms — Maui, HI">
-    </div>
-  </div>
-</div>
 
 <!-- ── CRISIS RESOURCES (slim) ───────────────────────────────── -->
 <section id="crisis" style="background:#1a0808; padding: 12px 40px; border-top:1px solid #b71c1c;">
@@ -1149,9 +1218,20 @@
 </section>
 
 <footer>
-  <div class="footer-logo">TURNING THE TIDES</div>
-  <div class="footer-text">Maui, Hawaii &nbsp;|&nbsp; A 501(c)(3) Nonprofit Organization</div>
-  <div class="footer-text">© 2025 Turning the Tides. All rights reserved.</div>
+  <img class="footer-icon" src="logo-icon-transparent.png" alt="Turning the Tides">
+  <div class="footer-text-block">
+    <div class="footer-logo">TURNING THE TIDES</div>
+    <div class="footer-text">Maui, Hawaii &nbsp;|&nbsp; A 501(c)(3) Nonprofit Organization</div>
+    <div class="footer-text">© 2025 Turning the Tides. All rights reserved.</div>
+  </div>
+  <div class="footer-supporters">
+    <div class="footer-supporter">
+      <img src="luna-farms-logo.jpg" alt="Luna Farms">
+    </div>
+    <div class="footer-supporter">
+      <img src="castelle-studio-logo.jpg" alt="Castelle Studio">
+    </div>
+  </div>
 </footer>
 
 <!-- Lightbox for gallery photos -->
