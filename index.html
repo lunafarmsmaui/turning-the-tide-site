@@ -174,14 +174,16 @@
       .partner-card img { max-height: 70px; }
       .partners { padding: 28px 20px; }
 
-      /* Modal pop-ups: drop the float so text flows below image instead of squished left */
+      /* Modal pop-ups: drop the float so text flows below image, all three same size */
       #modal-farm img, #modal-ocean img, #modal-community img {
         float: none !important;
         display: block !important;
         margin: 0 auto 16px !important;
         width: 100% !important;
         max-width: 320px !important;
+        aspect-ratio: 5/4 !important;
         height: auto !important;
+        object-fit: cover !important;
       }
     }
 
