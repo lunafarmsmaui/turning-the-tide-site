@@ -30,24 +30,20 @@
       position: relative;
     }
 
-    /* Topographic background overlay — DISABLED 2026-05-06 evening, paused mid-iteration */
-    /* User didn't like the tiled look. Files preserved: topo-bg.png, topo-bg-v2.png, topo-bg-transparent.png */
-    /* Re-enable by un-commenting and pick a non-tiled approach (section accent, divider, or feature block) */
-    /*
+    /* Topographic background — single full-viewport image, no tiling = no seam */
     body::after {
       content: '';
       position: fixed;
       inset: 0;
       z-index: 50;
       pointer-events: none;
-      opacity: 0.18;
-      background-image: url('topo-bg.png');
-      background-size: 700px 700px;
-      background-repeat: repeat;
-      filter: invert(1) sepia(1) saturate(4) hue-rotate(355deg) brightness(0.95);
+      opacity: 0.55;
+      background-image: url('topo-bg-big.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
       mix-blend-mode: screen;
     }
-    */
 
     /* Keep nav above the topo overlay so it stays solid */
     nav { z-index: 100; }
