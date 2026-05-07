@@ -70,6 +70,25 @@
     }
     nav.nav-hidden { transform: translateY(-100%); }
 
+    .nav-logo {
+      font-family: 'Oswald', sans-serif;
+      font-size: 34px; font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 2px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .nav-logo img {
+      height: 120px;
+      width: 120px;
+      flex-shrink: 0;
+      object-fit: contain;
+      filter: brightness(0) saturate(100%) invert(70%) sepia(75%) saturate(380%) hue-rotate(2deg) brightness(92%) contrast(100%);
+    }
+
     /* Mobile: hide the title text, shrink logo and links so nav fits */
     @media (max-width: 900px) {
       nav { padding: 10px 20px; }
@@ -83,23 +102,6 @@
       .nav-logo img { height: 40px; width: 40px; margin-left: 0; }
       .nav-links { gap: 6px; }
       .nav-links a { font-size: 7px; letter-spacing: 0.2px; }
-    }
-
-    .nav-logo {
-      font-family: 'Oswald', sans-serif;
-      font-size: 34px; font-weight: 700;
-      color: var(--gold);
-      letter-spacing: 2px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .nav-logo img {
-      height: 120px;
-      width: 120px;
-      flex-shrink: 0;
-      filter: brightness(0) saturate(100%) invert(70%) sepia(75%) saturate(380%) hue-rotate(2deg) brightness(92%) contrast(100%);
     }
 
     .nav-links { display: flex; gap: 30px; }
